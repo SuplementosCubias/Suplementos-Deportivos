@@ -94,7 +94,7 @@ const estudios = [
     link: "https://jissn.biomedcentral.com/"
   },
     {
-    Cuenta tus macros: "Calculadora de macros",
+    producto: "Calculadora de macros",
     descripcion: "Calculadora de macros online.",
     link: "https://www.calculator.net/macro-calculator.html"
   }
