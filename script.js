@@ -22,6 +22,7 @@ productos.forEach(p => {
       <h3>${p.nombre}</h3>
       <p>$${p.precio}</p>
       <button onclick="agregarAlCarrito(${p.id})">Agregar</button>
+      :`<p style="color:red; font-weight:bold;">SIN STOCK</p>`
     </div>
   `;
 });
