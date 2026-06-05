@@ -198,3 +198,21 @@ button:hover {
   height: auto;
   border-radius: 5px;
 }
+
+.banderas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #0d47a1, #1976d2);
+  padding: 10px;
+}
+
+.banderas img {
+  width: 45px;
+  margin: 0 10px;
+  transition: transform 0.2s;
+}
+
+.banderas img:hover {
+  transform: scale(1.2);
+}
