@@ -1,14 +1,14 @@
 const telefono = "50376600656";
 
 const productos = [
-  { id: 1, nombre: "Creatina Planitun", precio: 40, imagen: "001.jpg" },
-  { id: 2, nombre: "Creatina Dimatize", precio: 45, imagen: "002.jpg" },
-  { id: 3, nombre: "Ashwagandha", precio: 15, imagen: "003.jpg" },
-  { id: 4, nombre: "Test Booster", precio: 35, imagen: "004.jpg" },
-  { id: 5, nombre: "Pre NITROSURGE", precio: 35, imagen: "005.jpg" },
-  { id: 6, nombre: "Pre The Curse", precio: 30, imagen: "006.jpg" },
-  { id: 7, nombre: "Kaged Pre", precio: 35, imagen: "007.jpg" },
-  { id: 8, nombre: "Creatina Micronizada", precio: 35, imagen: "008.jpg" }
+  { id: 1, nombre: "Creatina Planitun 80 Servicios", precio: 40, imagen: "001.jpg" },
+  { id: 2, nombre: "Creatina Dimatize 60 Servicios", precio: 45, imagen: "002.jpg" },
+  { id: 3, nombre: "Ashwagandha 60 Servicios", precio: 15, imagen: "003.jpg" },
+  { id: 4, nombre: "Test Booster 120 Servicios", precio: 35, imagen: "004.jpg" },
+  { id: 5, nombre: "Pre entrenamiento NITROSURGE 30 Servicios", precio: 35, imagen: "005.jpg" },
+  { id: 6, nombre: "Pre entrenamiento The Curse 30 Servicios", precio: 30, imagen: "006.jpg" },
+  { id: 7, nombre: "Kaged Pre entrenamiento 20 servicios", precio: 35, imagen: "007.jpg" },
+  { id: 8, nombre: "Creatina Micronizada 60 Servicios", precio: 35, imagen: "008.jpg" }
 ];
 
 let carrito = [];
