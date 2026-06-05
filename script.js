@@ -1,115 +1,87 @@
 const telefono = "50376600656";
 
 const productos = [
-  { id: 1, nombre: "Creatina Planitun 80 Servicios", precio: 40, imagen: "001.jpg", stock: true },
-  { id: 2, nombre: "Creatina Dimatize 60 Servicios", precio: 45, imagen: "002.jpg", stock: true },
-  { id: 3, nombre: "Ashwagandha 60 Servicios", precio: 15, imagen: "003.jpg", stock: true },
-  { id: 4, nombre: "Test Booster 120 Servicios", precio: 35, imagen: "004.jpg", stock: true },
-  { id: 5, nombre: "Pre NITROSURGE 30 Servicios", precio: 35, imagen: "005.jpg", stock: true },
-  { id: 6, nombre: "Pre The Curse 30 Servicios", precio: 30, imagen: "006.jpg", stock: true },
-  { id: 7, nombre: "Kaged Pre 20 servicios", precio: 35, imagen: "007.jpg", stock: true },
-  { id: 8, nombre: "Creatina Micronizada 60 Servicios", precio: 35, imagen: "008.jpg", stock: true }
+  { id: 1, nombre: "Creatina Planitun", precio: 40, imagen: "001.jpg", stock: true },
+  { id: 2, nombre: "Creatina Dimatize", precio: 45, imagen: "002.jpg", stock: true },
+  { id: 3, nombre: "Ashwagandha", precio: 15, imagen: "003.jpg", stock: false }
 ];
 
 let carrito = [];
 
+// Mostrar productos
 const catalogo = document.getElementById("catalogo");
 
 productos.forEach(p => {
   catalogo.innerHTML += `
     <div class="producto ${!p.stock ? 'sin-stock' : ''}">
-      <img src="${p.imagen}" alt="${p.nombre}">
+      <img src="${p.imagen}">
       <h3>${p.nombre}</h3>
       <p>$${p.precio}</p>
 
       ${
-        p.stock 
+        p.stock
         ? `<button onclick="agregarAlCarrito(${p.id})">Agregar</button>`
-        : `<p style="color:red; font-weight:bold;">SIN STOCK</p>`
+        : `<p style="color:red;">SIN STOCK</p>`
       }
-
     </div>
   `;
 });
 
+// Carrito
 function agregarAlCarrito(id) {
-  const producto = productos.find(p => p.id === id);
+  const prod = productos.find(p => p.id === id);
 
-  if (!producto.stock) {
-    alert("Este producto no tiene stock");
+  if (!prod.stock) {
+    alert("Sin stock");
     return;
   }
 
-  const existente = carrito.find(p => p.id === id);
-
-  if (existente) {
-    existente.cantidad++;
-  } else {
-    carrito.push({ ...producto, cantidad: 1 });
-  }
-
+  carrito.push(prod);
   actualizarCarrito();
 }
 
 function actualizarCarrito() {
-  const contenedor = document.getElementById("carrito");
-  contenedor.innerHTML = "";
+  const cont = document.getElementById("carrito");
+  cont.innerHTML = "";
 
   let total = 0;
 
   carrito.forEach(p => {
-    total += p.precio * p.cantidad;
-
-    contenedor.innerHTML += `
-      <p>${p.nombre} x${p.cantidad} - $${p.precio * p.cantidad}</p>
-    `;
+    total += p.precio;
+    cont.innerHTML += `<p>${p.nombre} - $${p.precio}</p>`;
   });
 
   document.getElementById("total").innerText = "Total: $" + total;
 }
 
+// WhatsApp
 function enviarWhatsApp() {
-  if (carrito.length === 0) {
-    alert("El carrito está vacío");
-    return;
-  }
-
-  let mensaje = "Hola, quiero hacer este pedido:%0A";
+  let msg = "Pedido:%0A";
 
   carrito.forEach(p => {
-    mensaje += `- ${p.nombre} x${p.cantidad} = $${p.precio * p.cantidad}%0A`;
+    msg += `- ${p.nombre}%0A`;
   });
 
-  const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
-
-  mensaje += `%0ATotal: $${total}`;
-
-  const url = `https://wa.me/${telefono}?text=${mensaje}`;
-
-  window.open(url, "_blank");
+  window.open(`https://wa.me/${telefono}?text=${msg}`);
 }
 
+// Estudios
 const estudios = [
   {
     producto: "Creatina",
-    descripcion: "Mejora la fuerza muscular.",
+    descripcion: "Mejora fuerza muscular",
     link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12665265/"
-  },
-  {
-    producto: "Ashwagandha",
-    descripcion: "Reduce el estrés.",
-    link: "https://pubmed.ncbi.nlm.nih.gov/41830041/"
   }
 ];
 
-const contenedorEstudios = document.getElementById("estudios");
+const contenedor = document.getElementById("estudios");
 
 estudios.forEach(e => {
-  contenedorEstudios.innerHTML += `
-    <div class="estudio">
+  contenedor.innerHTML += `
+    <div>
       <h3>${e.producto}</h3>
       <p>${e.descripcion}</p>
-      <a href="${e.link}" target="_blank">🔗 Ver estudio científico</a>
+      <a href="${e.link}" target="_blank">Ver estudio</a>
     </div>
   `;
 });
