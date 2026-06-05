@@ -238,9 +238,9 @@ h1 {
   margin-top: 20px;
 }
 
-h1 {
+.header h1 {
+  color: white;
   font-size: 32px;
-  color: #0d47a1;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-  margin-top: 20px;
+  margin: 0;
+  letter-spacing: 2px;
 }
