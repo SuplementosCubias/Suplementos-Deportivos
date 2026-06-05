@@ -92,6 +92,11 @@ const estudios = [
     producto: "Pre Entrenamiento",
     descripcion: "Contiene estimulantes que aumentan energía y enfoque.",
     link: "https://jissn.biomedcentral.com/"
+  },
+    {
+    producto: "Cuenta tus macros",
+    descripcion: "Calculadora de macros.",
+    link: "https://www.calculator.net/macro-calculator.html"
   }
 ];
 
