@@ -3,12 +3,12 @@ const telefono = "50376600656";
 const productos = [
   { id: 1, nombre: "Creatina Planitun 80 Servicios", precio: 40, imagen: "001.jpg", stock: true },
   { id: 2, nombre: "Creatina Dimatize 60 Servicios", precio: 45, imagen: "002.jpg", stock: true },
-  { id: 3, nombre: "Ashwagandha 60 Servicios", precio: 15, imagen: "003.jpg", stock: true},
-  { id: 4, nombre: "Test Booster 120 Servicios", precio: 35, imagen: "004.jpg", stock: true},
-  { id: 5, nombre: "Pre entrenamiento NITROSURGE 30 Servicios", precio: 35, imagen: "005.jpg", stock: true},
-  { id: 6, nombre: "Pre entrenamiento The Curse 30 Servicios", precio: 30, imagen: "006.jpg", stock: true},
-  { id: 7, nombre: "Kaged Pre entrenamiento 20 servicios", precio: 35, imagen: "007.jpg", stock: true},
-  { id: 8, nombre: "Creatina Micronizada 60 Servicios", precio: 35, imagen: "008.jpg", stock: true}
+  { id: 3, nombre: "Ashwagandha 60 Servicios", precio: 15, imagen: "003.jpg", stock: true },
+  { id: 4, nombre: "Test Booster 120 Servicios", precio: 35, imagen: "004.jpg", stock: true },
+  { id: 5, nombre: "Pre NITROSURGE 30 Servicios", precio: 35, imagen: "005.jpg", stock: true },
+  { id: 6, nombre: "Pre The Curse 30 Servicios", precio: 30, imagen: "006.jpg", stock: true },
+  { id: 7, nombre: "Kaged Pre 20 servicios", precio: 35, imagen: "007.jpg", stock: true },
+  { id: 8, nombre: "Creatina Micronizada 60 Servicios", precio: 35, imagen: "008.jpg", stock: true }
 ];
 
 let carrito = [];
@@ -31,10 +31,15 @@ productos.forEach(p => {
     </div>
   `;
 });
-});
 
 function agregarAlCarrito(id) {
   const producto = productos.find(p => p.id === id);
+
+  if (!producto.stock) {
+    alert("Este producto no tiene stock");
+    return;
+  }
+
   const existente = carrito.find(p => p.id === id);
 
   if (existente) {
