@@ -17,7 +17,7 @@ const catalogo = document.getElementById("catalogo");
 
 productos.forEach(p => {
   catalogo.innerHTML += `
-    <div class="producto">
+    <div class="producto ${!p.stock ? 'sin-stock' : ''}">
       <img src="${p.imagen}" alt="${p.nombre}">
       <h3>${p.nombre}</h3>
       <p>$${p.precio}</p>
