@@ -56,14 +56,16 @@ function actualizarCarrito() {
   contenedor.innerHTML = "";
 
   let total = 0;
-
   carrito.forEach(p => {
-    total += p.precio;
+  total += p.precio * p.cantidad;
 
-    contenedor.innerHTML += `
-      <p>${p.nombre} - $${p.precio}</p>
-    `;
-  });
+  contenedor.innerHTML += `
+    <p>
+      ${p.nombre} x${p.cantidad} - $${p.precio * p.cantidad}
+      <button onclick="eliminarDelCarrito(${p.id})">❌</button>
+    </p>
+  `;
+});
 
   document.getElementById("total").innerText = "Total: $" + total;
 }
@@ -108,4 +110,10 @@ estudios.forEach(e => {
       <a href="${e.link}" target="_blank">🔗 Visitar pagina web</a>
     </div>
   `;
+
+  function eliminarDelCarrito(id) {
+  carrito = carrito.filter(p => p.id !== id);
+  actualizarCarrito();
+}
+
 });
