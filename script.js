@@ -1,4 +1,4 @@
-const telefono = "50376600656"; // tu número
+const telefono = "50376600656";
 
 const productos = [
   { id: 1, nombre: "Creatina Monohidratada - Planitun 80 servicios", precio: 40, imagen: "img/001.jpg"},
@@ -9,7 +9,6 @@ const productos = [
 
 let carrito = [];
 
-// Mostrar productos
 const catalogo = document.getElementById("catalogo");
 
 productos.forEach(p => {
@@ -23,10 +22,8 @@ productos.forEach(p => {
   `;
 });
 
-// Agregar al carrito
 function agregarAlCarrito(id) {
   const producto = productos.find(p => p.id === id);
-
   const existente = carrito.find(p => p.id === id);
 
   if (existente) {
@@ -38,7 +35,6 @@ function agregarAlCarrito(id) {
   actualizarCarrito();
 }
 
-// Mostrar carrito
 function actualizarCarrito() {
   const contenedor = document.getElementById("carrito");
   contenedor.innerHTML = "";
@@ -49,16 +45,13 @@ function actualizarCarrito() {
     total += p.precio * p.cantidad;
 
     contenedor.innerHTML += `
-      <p>
-        ${p.nombre} x${p.cantidad} - $${p.precio * p.cantidad}
-      </p>
+      <p>${p.nombre} x${p.cantidad} - $${p.precio * p.cantidad}</p>
     `;
   });
 
   document.getElementById("total").innerText = "Total: $" + total;
 }
 
-// Enviar pedido a WhatsApp
 function enviarWhatsApp() {
   if (carrito.length === 0) {
     alert("El carrito está vacío");
