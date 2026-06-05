@@ -21,10 +21,16 @@ productos.forEach(p => {
       <img src="${p.imagen}" alt="${p.nombre}">
       <h3>${p.nombre}</h3>
       <p>$${p.precio}</p>
-      <button onclick="agregarAlCarrito(${p.id})">Agregar</button>
-      :`<p style="color:red; font-weight:bold;">SIN STOCK</p>`
+
+      ${
+        p.stock 
+        ? `<button onclick="agregarAlCarrito(${p.id})">Agregar</button>`
+        : `<p style="color:red; font-weight:bold;">SIN STOCK</p>`
+      }
+
     </div>
   `;
+});
 });
 
 function agregarAlCarrito(id) {
