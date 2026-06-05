@@ -20,30 +20,28 @@ let carrito = [];
 
 const catalogo = document.getElementById("catalogo");
 
-// Mostrar productos
 productos.forEach(p => {
   catalogo.innerHTML += `
     <div class="producto ${!p.stock ? 'sin-stock' : ''}">
-      <img src="${p.imagen}" alt="${p.nombre}">
+      <img src="${p.imagen}">
       <h3>${p.nombre}</h3>
       <p>$${p.precio}</p>
 
       ${
         p.stock
         ? `<button onclick="agregarAlCarrito(${p.id})">Agregar</button>`
-        : `<p style="color:red; font-weight:bold;">SIN STOCK</p>`
+        : `<p style="color:red;">SIN STOCK</p>`
       }
-
     </div>
   `;
 });
 
-// Carrito
+// 🛒 AGREGAR
 function agregarAlCarrito(id) {
   const producto = productos.find(p => p.id === id);
 
   if (!producto.stock) {
-    alert("Este producto no tiene stock");
+    alert("Sin stock");
     return;
   }
 
@@ -51,69 +49,66 @@ function agregarAlCarrito(id) {
   actualizarCarrito();
 }
 
+// ❌ ELIMINAR
+function eliminarDelCarrito(id) {
+  carrito = carrito.filter(p => p.id !== id);
+  actualizarCarrito();
+}
+
+// 🔄 ACTUALIZAR CARRITO
 function actualizarCarrito() {
-  const contenedor = document.getElementById("carrito");
-  contenedor.innerHTML = "";
+  const cont = document.getElementById("carrito");
+  cont.innerHTML = "";
 
   let total = 0;
-  carrito.forEach(p => {
-  total += p.precio * p.cantidad;
 
-  contenedor.innerHTML += `
-    <p>
-      ${p.nombre} x${p.cantidad} - $${p.precio * p.cantidad}
-      <button onclick="eliminarDelCarrito(${p.id})">❌</button>
-    </p>
-  `;
-});
+  carrito.forEach(p => {
+    total += p.precio;
+
+    cont.innerHTML += `
+      <p>
+        ${p.nombre} - $${p.precio}
+        <button onclick="eliminarDelCarrito(${p.id})">❌</button>
+      </p>
+    `;
+  });
 
   document.getElementById("total").innerText = "Total: $" + total;
 }
 
-// WhatsApp
+// 📲 WHATSAPP
 function enviarWhatsApp() {
-  let mensaje = "Hola quiero comprar:%0A";
+  let msg = "Pedido:%0A";
 
   carrito.forEach(p => {
-    mensaje += `- ${p.nombre}%0A`;
+    msg += `- ${p.nombre}%0A`;
   });
 
-  window.open(`https://wa.me/${telefono}?text=${mensaje}`);
+  window.open(`https://wa.me/${telefono}?text=${msg}`);
 }
 
-// Estudios
+// 📚 ESTUDIOS
 const estudios = [
   {
     producto: "Creatina",
-    descripcion: "Mejora la fuerza muscular",
+    descripcion: "Mejora la fuerza",
     link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12665265/"
   },
   {
     producto: "Ashwagandha",
     descripcion: "Reduce el estrés",
     link: "https://pubmed.ncbi.nlm.nih.gov/41830041/"
-  },
-  {
-    producto: "Calculadora macros",
-    descripcion: "Aprende a caluclar tus macros, link abajo",
-    link: "https://www.calculator.net/macro-calculator.html"
   }
 ];
 
-const contenedorEstudios = document.getElementById("estudios");
+const contenedor = document.getElementById("estudios");
 
 estudios.forEach(e => {
-  contenedorEstudios.innerHTML += `
+  contenedor.innerHTML += `
     <div class="estudio">
       <h3>${e.producto}</h3>
       <p>${e.descripcion}</p>
-      <a href="${e.link}" target="_blank">🔗 Visitar pagina web</a>
+      <a href="${e.link}" target="_blank">Ver estudio</a>
     </div>
   `;
-
-  function eliminarDelCarrito(id) {
-  carrito = carrito.filter(p => p.id !== id);
-  actualizarCarrito();
-}
-
 });
