@@ -217,9 +217,9 @@ button:hover {
   transform: scale(1.2);
 }
 
-.musica {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
+iframe {
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
 }
 
