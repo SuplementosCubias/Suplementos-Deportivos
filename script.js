@@ -4,7 +4,11 @@ const productos = [
   { id: 1, nombre: "Creatina Planitun 80 Servicios", precio: 40, imagen: "001.jpg", stock: true },
   { id: 2, nombre: "Creatina Dimatize 60 Servicios", precio: 45, imagen: "002.jpg", stock: true },
   { id: 3, nombre: "Ashwagandha 60 Servicios", precio: 15, imagen: "003.jpg", stock: false },
-  { id: 4, nombre: "Test Booster 120 Servicios", precio: 35, imagen: "004.jpg", stock: true }
+  { id: 4, nombre: "Test Booster 120 Servicios", precio: 35, imagen: "004.jpg", stock: true },
+  { id: 5, nombre: "Pre Entrenamiento NITROSURGE - 30 servicios", precio: 35, imagen: "005.jpg", stock: false },
+  { id: 6, nombre: "Pre Entrenamiento the curse - 30 servicios", precio: 30, imagen: "006.jpg", stock: false },
+  { id: 7, nombre: "Kaged Sport Pre Workout", precio: 35, imagen: "007.jpg", stock: false },
+  { id: 8, nombre: "Creatina Micronizada - 60 servicios", precio: 35, imagen: "008.jpg", stock: false }
 ];
 
 let carrito = [];
