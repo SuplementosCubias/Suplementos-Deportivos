@@ -1,14 +1,16 @@
+asi: 
+
 const telefono = "50376600656";
 
 const productos = [
-  { id: 1, nombre: "Creatina Planitun", precio: 40, imagen: "001.jpg" },
-  { id: 2, nombre: "Creatina Dimatize", precio: 45, imagen: "002.jpg" },
-  { id: 3, nombre: "Ashwagandha", precio: 15, imagen: "003.jpg" },
-  { id: 4, nombre: "Test Booster", precio: 35, imagen: "004.jpg" },
-  { id: 5, nombre: "Pre NITROSURGE", precio: 35, imagen: "005.jpg" },
-  { id: 6, nombre: "Pre The Curse", precio: 30, imagen: "006.jpg" },
-  { id: 7, nombre: "Kaged Pre Workout", precio: 35, imagen: "007.jpg" },
-  { id: 8, nombre: "Creatina Micronizada", precio: 35, imagen: "008.jpg" }
+  { id: 1, nombre: "Creatina Monohidratada - Planitun 80 servicios", precio: 40, imagen: "001.jpg" },
+  { id: 2, nombre: "Creatina Monohidratada - Dimatize 60 servicios", precio: 45, imagen: "002.jpg" },
+  { id: 3, nombre: "Ashwagandha 60 capsulas", precio: 15, imagen: "003.jpg" },
+  { id: 4, nombre: "Testosterone Booster for Men 120 capsulas", precio: 35, imagen: "004.jpg" },
+  { id: 5, nombre: "Pre Entrenamiento NITROSURGE - 30 servicios", precio: 35, imagen: "005.jpg" },
+  { id: 6, nombre: "Pre Entrenamiento the curse - 30 servicios", precio: 30, imagen: "006.jpg" },
+  { id: 7, nombre: "Kaged Sport Pre Workout", precio: 35, imagen: "007.jpg" },
+  { id: 8, nombre: "Creatina Micronizada - 60 servicios", precio: 35, imagen: "008.jpg" }
 ];
 
 let carrito = [];
@@ -80,17 +82,17 @@ function enviarWhatsApp() {
 const estudios = [
   {
     producto: "Creatina",
-    descripcion: "Mejora la fuerza muscular.",
+    descripcion: "Efectos de la suplementación con creatina en las ganancias de fuerza muscular: un metaanálisis y una revisión sistemática.",
     link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12665265/"
   },
   {
     producto: "Ashwagandha",
-    descripcion: "Reduce estrés.",
+    descripcion: "Reduce el estrés y mejora niveles de testosterona en algunos estudios.",
     link: "https://pubmed.ncbi.nlm.nih.gov/41830041/"
   },
   {
-    producto: "Pre Entreno",
-    descripcion: "Aumenta energía.",
+    producto: "Pre Entrenamiento",
+    descripcion: "Contiene estimulantes que aumentan energía y enfoque.",
     link: "https://jissn.biomedcentral.com/"
   }
 ];
