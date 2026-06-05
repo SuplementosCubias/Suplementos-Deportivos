@@ -1,0 +1,81 @@
+const telefono = "50376600656"; // tu número
+
+const productos = [
+  { id: 1, nombre: "Creatina Monohidratada - Planitun 80 servicios", precio: 40, imagen: "img/001.jpg"},
+  { id: 2, nombre: "Creatina Monohidratada - Dimatize 60 servicios", precio: 45, imagen: "img/002.jpg"},
+  { id: 3, nombre: "Ashwagandha 60 capsulas", precio: 15, imagen: "img/003.jpg"},
+  { id: 4, nombre: "Testosterone Booster for Men 120 capsulas", precio: 35, imagen: "img/004.jpg"}
+];
+
+let carrito = [];
+
+// Mostrar productos
+const catalogo = document.getElementById("catalogo");
+
+productos.forEach(p => {
+  catalogo.innerHTML += `
+    <div class="producto">
+      <img src="${p.imagen}" alt="${p.nombre}">
+      <h3>${p.nombre}</h3>
+      <p>$${p.precio}</p>
+      <button onclick="agregarAlCarrito(${p.id})">Agregar</button>
+    </div>
+  `;
+});
+
+// Agregar al carrito
+function agregarAlCarrito(id) {
+  const producto = productos.find(p => p.id === id);
+
+  const existente = carrito.find(p => p.id === id);
+
+  if (existente) {
+    existente.cantidad++;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+
+  actualizarCarrito();
+}
+
+// Mostrar carrito
+function actualizarCarrito() {
+  const contenedor = document.getElementById("carrito");
+  contenedor.innerHTML = "";
+
+  let total = 0;
+
+  carrito.forEach(p => {
+    total += p.precio * p.cantidad;
+
+    contenedor.innerHTML += `
+      <p>
+        ${p.nombre} x${p.cantidad} - $${p.precio * p.cantidad}
+      </p>
+    `;
+  });
+
+  document.getElementById("total").innerText = "Total: $" + total;
+}
+
+// Enviar pedido a WhatsApp
+function enviarWhatsApp() {
+  if (carrito.length === 0) {
+    alert("El carrito está vacío");
+    return;
+  }
+
+  let mensaje = "Hola, quiero hacer este pedido:%0A";
+
+  carrito.forEach(p => {
+    mensaje += `- ${p.nombre} x${p.cantidad} = $${p.precio * p.cantidad}%0A`;
+  });
+
+  const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
+
+  mensaje += `%0ATotal: $${total}`;
+
+  const url = `https://wa.me/${telefono}?text=${mensaje}`;
+
+  window.open(url, "_blank");
+}

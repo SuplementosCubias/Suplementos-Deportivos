@@ -1,0 +1,44 @@
+body {
+  font-family: Arial;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.producto {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 8px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#carrito {
+  background: white;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.producto img {
+  width: 100%;        /* ocupa todo el ancho del contenedor */
+  height: auto;       /* mantiene proporción original */
+  max-height: 200px;  /* límite máximo */
+  object-fit: contain; /* muestra completa sin recortar */
+  border-radius: 10px;
+}
+
+.catalogo {
+  max-width: 1200px;
+  margin: auto;
+}
