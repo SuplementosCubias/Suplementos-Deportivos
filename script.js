@@ -8,11 +8,12 @@ const productos = [
   { id: 5, nombre: "Pre Entrenamiento NITROSURGE - 30 servicios", precio: 35, imagen: "005.jpg", stock: true },
   { id: 6, nombre: "Pre Entrenamiento the curse - 30 servicios", precio: 30, imagen: "006.jpg", stock: true },
   { id: 7, nombre: "Kaged Sport Pre Workout", precio: 35, imagen: "007.jpg", stock: true },
-  { id: 8, nombre: "Creatina Micronizada - 60 servicios", precio: 35, imagen: "008.jpg", stock: true },
-  { id: 8, nombre: "Creatina Micronizada - 60 servicios", precio: 35, imagen: "009.jpg", stock: true },
-  { id: 8, nombre: "Creatina Micronizada - 60 servicios", precio: 35, imagen: "010.jpg", stock: true },
-  { id: 8, nombre: "Creatina Micronizada - 60 servicios", precio: 35, imagen: "011.jpg", stock: true },
-  { id: 8, nombre: "Creatina Micronizada - 60 servicios", precio: 35, imagen: "012.jpg", stock: true }
+  { id: 8, nombre: "Creatina Micronizada 60 Servicios", precio: 35, imagen: "007.jpg", stock: true },
+  { id: 9, nombre: "Pre Entrenamiento NITROSURGE - 10 servicios", precio: 25, imagen: "008.jpg", stock: true },
+  { id: 10, nombre: "Creatina Monohidratada JACKED FACTORY - 30 servicios", precio: 25, imagen: "009.jpg", stock: true },
+  { id: 11, nombre: "Creatina Monohidratada the curse - 60 servicios", precio: 35, imagen: "010.jpg", stock: true },
+  { id: 12, nombre: "Creatina Monohidratad Rule one - 30 servicios", precio: 25, imagen: "011.jpg", stock: true },
+  { id: 13, nombre: "Creatina Monohidratad nutrex - 30 servicios", precio: 25, imagen: "012.jpg", stock: true }
 ];
 
 let carrito = [];
