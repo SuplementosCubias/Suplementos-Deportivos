@@ -229,13 +229,10 @@ iframe {
   text-align: center;
 }
 
-h1 {
-  font-size: 30px;
-  font-weight: bold;
-  color: #0d47a1;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 20px;
+.header {
+  background: linear-gradient(90deg, #0d47a1, #1976d2);
+  padding: 25px;
+  text-align: center;
 }
 
 .header h1 {
@@ -243,4 +240,5 @@ h1 {
   font-size: 32px;
   margin: 0;
   letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
