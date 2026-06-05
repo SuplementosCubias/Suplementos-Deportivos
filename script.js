@@ -90,6 +90,11 @@ const estudios = [
     producto: "Ashwagandha",
     descripcion: "Reduce el estrés",
     link: "https://pubmed.ncbi.nlm.nih.gov/41830041/"
+  },
+  {
+    producto: "Calculadora macros",
+    descripcion: "Aprende a caluclar tus macros, link abajo",
+    link: "https://www.calculator.net/macro-calculator.html"
   }
 ];
 
