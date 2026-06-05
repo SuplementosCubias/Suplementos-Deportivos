@@ -105,7 +105,7 @@ estudios.forEach(e => {
     <div class="estudio">
       <h3>${e.producto}</h3>
       <p>${e.descripcion}</p>
-      <a href="${e.link}" target="_blank">🔗 Ver estudio</a>
+      <a href="${e.link}" target="_blank">🔗 Visitar pagina web</a>
     </div>
   `;
 });
