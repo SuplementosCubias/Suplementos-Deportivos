@@ -87,11 +87,6 @@ const estudios = [
     producto: "Ashwagandha",
     descripcion: "Reduce el estrés.",
     link: "https://pubmed.ncbi.nlm.nih.gov/41830041/"
-  },
-  {
-    producto: "Pre Entrenamiento",
-    descripcion: "Aumenta energía.",
-    link: "https://jissn.biomedcentral.com/"
   }
 ];
 
