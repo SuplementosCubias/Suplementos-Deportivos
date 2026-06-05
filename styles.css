@@ -61,3 +61,8 @@ button {
   color: blue;
   text-decoration: none;
 }
+
+.sin-stock {
+  opacity: 0.5;
+}
+
