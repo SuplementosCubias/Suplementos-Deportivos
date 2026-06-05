@@ -4,7 +4,7 @@ const productos = [
   { id: 1, nombre: "Creatina Monohidratada - Planitun 80 servicios", precio: 40, imagen: "001.jpg" },
   { id: 2, nombre: "Creatina Monohidratada - Dimatize 60 servicios", precio: 45, imagen: "002.jpg" },
   { id: 3, nombre: "Ashwagandha 60 capsulas", precio: 15, imagen: "003.jpg" },
-  { id: 4, nombre: "Testosterone Booster for Men 120 capsulas", precio: 35, imagen: "004.jpg" }
+  { id: 4, nombre: "Testosterone Booster for Men 120 capsulas", precio: 35, imagen: "004.jpg" },
   { id: 5, nombre: "Pre Entrenamiento NITROSURGE - 30 servicios", precio: 35, imagen: "005.jpg" },
   { id: 6, nombre: "Pre Entrenamiento the curse - 30 servicios", precio: 30, imagen: "006.jpg" },
   { id: 7, nombre: "Kaged Sport Pre Workout", precio: 35, imagen: "007.jpg" },
