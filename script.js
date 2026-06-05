@@ -92,11 +92,6 @@ const estudios = [
     producto: "Pre Entreno",
     descripcion: "Aumenta energía.",
     link: "https://jissn.biomedcentral.com/"
-  },
-  {
-    producto: "Calculadora de macros",
-    descripcion: "Herramienta útil online.",
-    link: "https://www.calculator.net/macro-calculator.html"
   }
 ];
 
