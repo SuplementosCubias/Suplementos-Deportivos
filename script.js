@@ -76,3 +76,34 @@ function enviarWhatsApp() {
 
   window.open(url, "_blank");
 }
+
+const estudios = [
+  {
+    producto: "Creatina",
+    descripcion: "Efectos de la suplementación con creatina en las ganancias de fuerza muscular: un metaanálisis y una revisión sistemática.",
+    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12665265/"
+  },
+  {
+    producto: "Ashwagandha",
+    descripcion: "Reduce el estrés y mejora niveles de testosterona en algunos estudios.",
+    link: "https://pubmed.ncbi.nlm.nih.gov/41830041/"
+  },
+  {
+    producto: "Pre Entrenamiento",
+    descripcion: "Contiene estimulantes que aumentan energía y enfoque.",
+    link: "https://jissn.biomedcentral.com/"
+  }
+];
+
+const contenedorEstudios = document.getElementById("estudios");
+
+estudios.forEach(e => {
+  contenedorEstudios.innerHTML += `
+    <div class="estudio">
+      <h3>${e.producto}</h3>
+      <p>${e.descripcion}</p>
+      <a href="${e.link}" target="_blank">🔗 Ver estudio científico</a>
+    </div>
+  `;
+});
+
