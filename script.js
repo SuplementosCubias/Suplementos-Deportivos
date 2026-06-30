@@ -6,7 +6,7 @@ const productos = [
   { id: 8, nombre: "Creatina Micronizada 120 Servicios", precio: 55, imagen: "014.jpg", stock: true },
   { id: 8, nombre: "Creatina Micronizada 60 Servicios", precio: 30, imagen: "008.jpg", stock: true },
   { id: 3, nombre: "Ashwagandha 60 Servicios", precio: 20, imagen: "003.jpg", stock: false },
-  { id: 4, nombre: "Por pedido - Test Booster 120 Servicios", precio: 35, imagen: "004.jpg", stock: false },
+  { id: 4, nombre: "Test Booster 120 Servicios", precio: 35, imagen: "004.jpg", stock: false },
   { id: 5, nombre: "Pre Entrenamiento NITROSURGE - 30 servicios", precio: 35, imagen: "005.jpg", stock: false },
   { id: 6, nombre: "Pre Entrenamiento the curse - 30 servicios", precio: 30, imagen: "006.jpg", stock: false },
   { id: 7, nombre: "Kaged Sport Pre Workout", precio: 35, imagen: "007.jpg", stock: false },
