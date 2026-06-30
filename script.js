@@ -14,7 +14,7 @@ const productos = [
   { id: 11, nombre: "Creatina Monohidratada the curse - 60 servicios", precio: 35, imagen: "011.jpg", stock: false },
   { id: 12, nombre: "Creatina Monohidratad Rule one - 30 servicios", precio: 25, imagen: "012.jpg", stock: false },
   { id: 13, nombre: "Creatina Monohidratad nutrex - 60 servicios", precio: 30, imagen: "013.jpg", stock: true },
-  { id: 8, nombre: "Creatina Micronizada 120 Servicios", precio: 55, imagen: "008.jpg", stock: true },
+  { id: 8, nombre: "Creatina Micronizada 120 Servicios", precio: 55, imagen: "014.jpg", stock: true }
 ];
 
 let carrito = [];
