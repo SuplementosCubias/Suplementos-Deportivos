@@ -79,13 +79,25 @@ function actualizarCarrito() {
 
 // 📲 WHATSAPP
 function enviarWhatsApp() {
-  let msg = "Necesito los siguientes productos:%0A";
+
+  if (carrito.length === 0) {
+    alert("El carrito está vacío");
+    return;
+  }
+
+  let total = 0;
+
+  let msg = "Hola, quiero realizar el siguiente pedido:\n\n";
 
   carrito.forEach(p => {
-    msg += `- ${p.nombre}%`;
+    msg += `✅ ${p.nombre} - $${p.precio}\n`;
+    total += p.precio;
   });
 
-  window.open(`https://wa.me/${telefono}?text=${msg}`);
+  msg += `\n💰 Total: $${total}`;
+
+  const url = `https://wa.me/${telefono}?text=${encodeURIComponent(msg)}`;
+  window.open(url, "_blank");
 }
 
 // 📚 ESTUDIOS
