@@ -82,7 +82,7 @@ function enviarWhatsApp() {
   let msg = "Necesito los siguientes productos:%0A";
 
   carrito.forEach(p => {
-    msg += `- ${p.nombre}%0A`;
+    msg += `- ${p.nombre}%`;
   });
 
   window.open(`https://wa.me/${telefono}?text=${msg}`);
