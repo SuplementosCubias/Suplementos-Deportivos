@@ -85,25 +85,23 @@ function enviarWhatsApp() {
   }
 
   let total = 0;
-  let lineas = [];
 
-  lineas.push("Hola, quiero realizar el siguiente pedido:");
-  lineas.push("");
+  let mensaje = "Hola, quiero realizar el siguiente pedido:\n\n";
 
   carrito.forEach(p => {
-    lineas.push(${p.nombre} - $${p.precio});
+    mensaje += "- " + p.nombre + " - $" + p.precio + "\n";
     total += p.precio;
   });
 
-  lineas.push("");
-  lineas.push(Total: $${total}`);
+  mensaje += "\nTotal: $" + total;
 
-  const mensaje = lineas.join("\n");
+  const url =
+    "https://wa.me/" +
+    telefono +
+    "?text=" +
+    encodeURIComponent(mensaje);
 
-  window.open(
-    `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
-    "_blank"
-  );
+  window.open(url, "_blank");
 }
 
 // 📚 ESTUDIOS
