@@ -91,12 +91,12 @@ function enviarWhatsApp() {
   lineas.push("");
 
   carrito.forEach(p => {
-    lineas.push(`- ${p.nombre} - $${p.precio}`);
+    lineas.push(${p.nombre} - $${p.precio});
     total += p.precio;
   });
 
   lineas.push("");
-  lineas.push(`Total: $${total}`);
+  lineas.push(Total: $${total}`);
 
   const mensaje = lineas.join("\n");
 
