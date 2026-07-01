@@ -79,7 +79,7 @@ function actualizarCarrito() {
 
 // 📲 WHATSAPP
 function enviarWhatsApp() {
-  let msg = "Pedido:%0A";
+  let msg = "Necesito los siguientes productos:%0A";
 
   carrito.forEach(p => {
     msg += `- ${p.nombre}%0A`;
