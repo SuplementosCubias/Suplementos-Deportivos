@@ -77,7 +77,6 @@ function actualizarCarrito() {
   document.getElementById("total").innerText = "Total: $" + total;
 }
 
-// 📲 WHATSAPP
 function enviarWhatsApp() {
 
   if (carrito.length === 0) {
@@ -86,18 +85,25 @@ function enviarWhatsApp() {
   }
 
   let total = 0;
+  let lineas = [];
 
-  let msg = "Hola, quiero realizar el siguiente pedido:\n\n";
+  lineas.push("Hola, quiero realizar el siguiente pedido:");
+  lineas.push("");
 
   carrito.forEach(p => {
-    msg += `✅ ${p.nombre} - $${p.precio}\n`;
+    lineas.push(`- ${p.nombre} - $${p.precio}`);
     total += p.precio;
   });
 
-  msg += `\n💰 Total: $${total}`;
+  lineas.push("");
+  lineas.push(`Total: $${total}`);
 
-  const url = `https://wa.me/${telefono}?text=${encodeURIComponent(msg)}`;
-  window.open(url, "_blank");
+  const mensaje = lineas.join("\n");
+
+  window.open(
+    `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
+    "_blank"
+  );
 }
 
 // 📚 ESTUDIOS
