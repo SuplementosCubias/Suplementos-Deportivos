@@ -283,3 +283,49 @@ iframe {
 .catalogo {
   margin-right: 340px;
 }
+
+/* BANNER PRINCIPAL */
+.banner-principal {
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.banner-principal img {
+  width: 100%;
+  display: block;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Efecto elegante */
+.banner-principal img {
+  transition: transform 0.5s ease;
+}
+
+.banner-principal:hover img {
+  transform: scale(1.02);
+}
+
+body {
+  background: #0a0a0a;
+}
+
+.header {
+  background: linear-gradient(90deg, #00b4ff, #007bff);
+}
+
+.producto {
+  background: #151515;
+  color: white;
+  border: 1px solid #222;
+}
+
+.producto p {
+  color: #00b4ff;
+}
+
+button {
+  background: linear-gradient(90deg,#00b4ff,#ff00ff);
+}
+
