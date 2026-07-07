@@ -5,28 +5,23 @@ const productos = [
         id: 1,
         nombre: "Creatina Planitun 80 Servicios",
         precio: 40,
-        imagen: "001.jpg",
-        stock: true
+        imagen: "001.jpg"
     },
     {
         id: 2,
         nombre: "Creatina Micronizada 120 Servicios",
         precio: 55,
-        imagen: "014.jpg",
-        stock: true
+        imagen: "014.jpg"
     },
     {
         id: 3,
         nombre: "Creatina Micronizada 60 Servicios",
         precio: 30,
-        imagen: "008.jpg",
-        stock: true
+        imagen: "008.jpg"
     }
 ];
 
 let carrito = [];
-
-/* CATÁLOGO */
 
 const catalogo = document.getElementById("catalogo");
 
@@ -35,7 +30,7 @@ productos.forEach(producto => {
     catalogo.innerHTML += `
         <div class="producto">
 
-            agen}" alt="${producto.nombre}">
+            ${producto.imagen}
 
             <h3>${producto.nombre}</h3>
 
@@ -49,12 +44,11 @@ productos.forEach(producto => {
     `;
 });
 
-/* CARRITO */
-
 function agregarAlCarrito(id){
 
-    const producto =
-        productos.find(p => p.id === id);
+    const producto = productos.find(
+        p => p.id === id
+    );
 
     carrito.push(producto);
 
@@ -70,7 +64,7 @@ function actualizarCarrito(){
 
     divCarrito.innerHTML = "";
 
-    carrito.forEach((producto,index)=>{
+    carrito.forEach((producto,index) => {
 
         total += producto.precio;
 
@@ -97,8 +91,6 @@ function eliminar(index){
     actualizarCarrito();
 }
 
-/* WHATSAPP */
-
 function enviarWhatsApp(){
 
     if(carrito.length === 0){
@@ -121,11 +113,8 @@ function enviarWhatsApp(){
 
     mensaje += `\nTotal: $${total}`;
 
-window.open(
-    `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
-    "_blank"
-);
+    window.open(
+        `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
+        "_blank"
+    );
 }
-
-    `;
-});
