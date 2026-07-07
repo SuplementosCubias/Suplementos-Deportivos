@@ -141,3 +141,9 @@ button:hover {
 .footer h2 {
   color: white;
 }
+
+.slogan {
+  text-align: center;
+  padding: 20px;
+  color: #00b4ff;
+}
