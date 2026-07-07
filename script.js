@@ -41,19 +41,22 @@ const catalogo = document.getElementById("catalogo");
 productos.forEach(producto => {
 
     catalogo.innerHTML += `
-        <div class="producto ${!producto.stock ? 'sin-stock' : ''}">
+    <div class="producto ${!producto.stock ? 'sin-stock' : ''}">
 
-            ${producto.imagen}.nombre}">
+        ${producto.imagen}producto.nombre}">
 
-            <h3>${producto.nombre}</h3>
+        <h3>${producto.nombre}</h3>
 
-            <p>$${producto.precio}</p>
+        <p>$${producto.precio}</p>
 
-            ${
-                producto.stock
-                ? `<button onclick="agregarAlCarrito(${producto.id})">Agregar</button>`
-                : `<p>Sin Stock</p>`
-            }
+        ${
+            producto.stock
+            ? `<button onclick="agregarAlCarrito(${producto.id})">Agregar</button>`
+            : `<p>Sin Stock</p>`
+        }
+
+    </div>
+`;
 
         </div>
     `;
