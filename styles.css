@@ -284,27 +284,23 @@ iframe {
   margin-right: 340px;
 }
 
-/* BANNER PRINCIPAL */
 .banner-principal {
   width: 100%;
-  overflow: hidden;
   background: #000;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,.5);
 }
 
 .banner-principal img {
   width: 100%;
-  display: block;
-  max-height: 400px;
+  height: 350px;
   object-fit: cover;
-}
-
-/* Efecto elegante */
-.banner-principal img {
-  transition: transform 0.5s ease;
+  display: block;
+  transition: all .4s ease;
 }
 
 .banner-principal:hover img {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 body {
