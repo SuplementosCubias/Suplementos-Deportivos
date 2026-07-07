@@ -1,18 +1,143 @@
-.banner-principal {
-  width: 100%;
-  background: #000;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,.5);
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0f1117;
+  color: white;
+  margin: 0;
 }
+
+/* HEADER */
+
+.header {
+  background: linear-gradient(90deg, #00b4ff, #0066ff);
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0,180,255,.3);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+/* BANNER */
 
 .banner-principal img {
   width: 100%;
-  height: 350px;
-  object-fit: cover;
   display: block;
-  transition: all .4s ease;
+  max-height: 400px;
+  object-fit: cover;
 }
 
-.banner-principal:hover img {
+/* CATÁLOGO */
+
+#catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 25px;
+  margin-right: 340px;
+}
+
+.producto {
+  background: #181b24;
+  border-radius: 20px;
+  padding: 15px;
+  border: 1px solid #222;
+  transition: 0.3s;
+  box-shadow: 0 5px 20px rgba(0,0,0,.3);
+}
+
+.producto:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,180,255,.25);
+}
+
+.producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+.producto h3 {
+  font-size: 15px;
+  min-height: 50px;
+}
+
+.producto p {
+  color: #00b4ff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* BOTONES */
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#00b4ff,#6a00ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
   transform: scale(1.03);
+}
+
+/* CARRITO */
+
+.carrito-flotante {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+
+  background: #181b24;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+
+  box-shadow: 0 0 20px rgba(0,180,255,.2);
+
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* ESTUDIOS */
+
+.estudio {
+  background: #181b24;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  border-radius: 15px;
+  border-left: 5px solid #00b4ff;
+}
+
+.estudio a {
+  color: #00b4ff;
+  text-decoration: none;
+}
+
+/* FOOTER */
+
+.footer {
+  background: #080808;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+  border-top: 2px solid #00b4ff;
+}
+
+.footer a {
+  color: #00b4ff;
+  text-decoration: none;
+}
+
+.footer h2 {
+  color: white;
 }
