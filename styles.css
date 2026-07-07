@@ -200,3 +200,10 @@ footer a{
         position:static;
     }
 }
+
+.producto h3{
+    color:black;
+    padding:10px;
+    min-height:60px;
+    font-size:15px;
+}
