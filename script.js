@@ -1,85 +1,111 @@
 const telefono = "50376600656";
 
 const productos = [
-  { id: 1, nombre: "Creatina Planitun 80 Servicios", precio: 40, imagen: "001.jpg", stock: true },
-  { id: 2, nombre: "SELLO CREAPURE - Creatina Dimatize 60 Servicios", precio: 40, imagen: "002.jpg", stock: false },
-  { id: 3, nombre: "Creatina Micronizada 120 Servicios", precio: 55, imagen: "014.jpg", stock: true },
-  { id: 4, nombre: "Creatina Micronizada 60 Servicios", precio: 30, imagen: "008.jpg", stock: true },
-  { id: 5, nombre: "Ashwagandha 60 Servicios", precio: 20, imagen: "003.jpg", stock: false },
-  { id: 6, nombre: "Test Booster 120 Servicios", precio: 35, imagen: "004.jpg", stock: false },
-  { id: 7, nombre: "Pre Entrenamiento NITROSURGE - 30 servicios", precio: 35, imagen: "005.jpg", stock: false },
-  { id: 8, nombre: "Pre Entrenamiento The Curse - 30 servicios", precio: 30, imagen: "006.jpg", stock: false },
-  { id: 9, nombre: "Kaged Sport Pre Workout", precio: 35, imagen: "007.jpg", stock: false },
-  { id: 10, nombre: "Pre Entrenamiento NITROSURGE - 10 servicios", precio: 25, imagen: "009.jpg", stock: false },
-  { id: 11, nombre: "Creatina Monohidratada JACKED FACTORY - 30 servicios", precio: 25, imagen: "010.jpg", stock: false },
-  { id: 12, nombre: "Creatina Monohidratada The Curse - 60 servicios", precio: 35, imagen: "011.jpg", stock: false },
-  { id: 13, nombre: "Creatina Monohidratada Rule One - 30 servicios", precio: 25, imagen: "012.jpg", stock: false },
-  { id: 14, nombre: "Creatina Monohidratada Nutrex - 60 servicios", precio: 30, imagen: "013.jpg", stock: false }
+  {
+    id: 1,
+    nombre: "Creatina Planitun 80 Servicios",
+    precio: 40,
+    imagen: "001.jpg",
+    stock: true
+  },
+  {
+    id: 2,
+    nombre: "Creatina Micronizada 120 Servicios",
+    precio: 55,
+    imagen: "014.jpg",
+    stock: true
+  },
+  {
+    id: 3,
+    nombre: "Creatina Micronizada 60 Servicios",
+    precio: 30,
+    imagen: "008.jpg",
+    stock: true
+  }
+];
+
+const estudios = [
+  {
+    producto: "Creatina",
+    descripcion: "La creatina mejora la fuerza, potencia y rendimiento deportivo.",
+    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12665265/"
+  },
+  {
+    producto: "Ashwagandha",
+    descripcion: "Puede ayudar a reducir el estrés y mejorar el bienestar general.",
+    link: "https://pubmed.ncbi.nlm.nih.gov/41830041/"
+  }
 ];
 
 let carrito = [];
 
 const catalogo = document.getElementById("catalogo");
+const carritoDiv = document.getElementById("carrito");
+const totalDiv = document.getElementById("total");
+const estudiosDiv = document.getElementById("estudios");
 
-productos.forEach(p => {
-  catalogo.innerHTML += `
-    <div class="producto ${!p.stock ? 'sin-stock' : ''}">
-      img/${p.imagen}
-      <h3>${p.nombre}</h3>
-      <p>$${p.precio}</p>
+/* PRODUCTOS */
 
-      ${
-        p.stock
-          ? `<button onclick="agregarAlCarrito(${p.id})">Agregar</button>`
-          : `<p style="color:red;">SIN STOCK</p>`
-      }
-    </div>
-  `;
-});
+function cargarProductos() {
+  catalogo.innerHTML = "";
+
+  productos.forEach(producto => {
+    catalogo.innerHTML += `
+      <div class="producto">
+        ${producto.imagen}producto.nombre}">
+        <h3>${producto.nombre}</h3>
+        <p>$${producto.precio}</p>
+
+        ${
+          producto.stock
+            ? `<button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>`
+            : `<p style="color:red;">Sin stock</p>`
+        }
+      </div>
+    `;
+  });
+}
+
+/* CARRITO */
 
 function agregarAlCarrito(id) {
   const producto = productos.find(p => p.id === id);
 
-  if (!producto.stock) {
-    alert("Sin stock");
-    return;
-  }
+  if (!producto) return;
 
   carrito.push(producto);
+
   actualizarCarrito();
 }
 
-function eliminarDelCarrito(id) {
-  const index = carrito.findIndex(p => p.id === id);
-
-  if (index !== -1) {
-    carrito.splice(index, 1);
-  }
+function eliminarDelCarrito(indice) {
+  carrito.splice(indice, 1);
 
   actualizarCarrito();
 }
 
 function actualizarCarrito() {
-  const cont = document.getElementById("carrito");
-
-  cont.innerHTML = "";
+  carritoDiv.innerHTML = "";
 
   let total = 0;
 
-  carrito.forEach(p => {
-    total += p.precio;
+  carrito.forEach((producto, indice) => {
+    total += producto.precio;
 
-    cont.innerHTML += `
+    carritoDiv.innerHTML += `
       <p>
-        ${p.nombre} - $${p.precio}
-        <button onclick="eliminarDelCarrito(${p.id})">❌</button>
+        ${producto.nombre} - $${producto.precio}
+        <button onclick="eliminarDelCarrito(${indice})">
+          ❌
+        </button>
       </p>
     `;
   });
 
-  document.getElementById("total").innerText =
-    "Total: $" + total;
+  totalDiv.textContent = `Total: $${total}`;
 }
+
+/* WHATSAPP */
 
 function enviarWhatsApp() {
 
@@ -88,47 +114,42 @@ function enviarWhatsApp() {
     return;
   }
 
+  let mensaje = "Hola, deseo realizar el siguiente pedido:%0A%0A";
   let total = 0;
 
-  let mensaje =
-    "Hola, quiero realizar el siguiente pedido:\n\n";
-
-  carrito.forEach(p => {
-    mensaje += `- ${p.nombre} - $${p.precio}\n`;
-    total += p.precio;
+  carrito.forEach(producto => {
+    mensaje += `• ${producto.nombre} - $${producto.precio}%0A`;
+    total += producto.precio;
   });
 
-  mensaje += `\nTotal: $${total}`;
+  mensaje += `%0A💰 Total: $${total}`;
 
-  const url =
-    `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-
-  window.open(url, "_blank");
+  window.open(
+    `https://wa.me/${telefono}?text=${mensaje}`,
+    "_blank"
+  );
 }
 
-const estudios = [
-  {
-    producto: "Creatina",
-    descripcion: "Mejora la fuerza y el rendimiento deportivo.",
-    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12665265/"
-  },
-  {
-    producto: "Ashwagandha",
-    descripcion: "Puede ayudar a reducir el estrés.",
-    link: "https://pubmed.ncbi.nlm.nih.gov/41830041/"
-  }
-];
+/* ESTUDIOS */
 
-const contenedor = document.getElementById("estudios");
+function cargarEstudios() {
+  estudiosDiv.innerHTML = "";
 
-estudios.forEach(e => {
-  contenedor.innerHTML += `
-    <div class="estudio">
-      <h3>${e.producto}</h3>
-      <p>${e.descripcion}</p>
-      ${e.link}
-        Ver estudio
-      </a>
-    </div>
-  `;
-});
+  estudios.forEach(estudio => {
+    estudiosDiv.innerHTML += `
+      <div class="estudio">
+        <h3>${estudio.producto}</h3>
+        <p>${estudio.descripcion}</p>
+
+        ${estudio.link}
+          Ver estudio científico
+        </a>
+      </div>
+    `;
+  });
+}
+
+/* INICIO */
+
+cargarProductos();
+cargarEstudios();
