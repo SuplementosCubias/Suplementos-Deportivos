@@ -1,6 +1,6 @@
-co*st telefono = "50376600656";
+const telefono = "50376600656";
 
-cons* productos = [
+const productos = [
     {
         id: 1,
         nombre: "Creatina Planitun 80 Servicios",
@@ -31,18 +31,21 @@ const estudios = [
         link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12665265/"
     }
 ];
-*let carrito = [];
 
-const catalogo * document.getElementById("catalogo*);
+let carrito = [];
 
-productos.forEach(producto => *
+/* CATÁLOGO */
+
+const catalogo = document.getElementById("catalogo");
+
+productos.forEach(producto => {
 
     catalogo.innerHTML += `
-    *   <div class="producto ${!product*.stock ? 'sin-stock' : ''}">
+        <div class="producto ${!producto.stock ? 'sin-stock' : ''}">
 
-    *       ${producto.imagen}.nombre}"*
+            ${producto.imagen}.nombre}">
 
-            <h3>${producto.nombr*}</h3>
+            <h3>${producto.nombre}</h3>
 
             <p>$${producto.precio}</p>
 
@@ -55,6 +58,8 @@ productos.forEach(producto => *
         </div>
     `;
 });
+
+/* CARRITO */
 
 function agregarAlCarrito(id){
 
@@ -93,7 +98,6 @@ function actualizarCarrito(){
 
     document.getElementById("total").innerText =
         "Total: $" + total;
-
 }
 
 function eliminar(index){
@@ -103,6 +107,8 @@ function eliminar(index){
     actualizarCarrito();
 }
 
+/* WHATSAPP */
+
 function enviarWhatsApp(){
 
     if(carrito.length === 0){
@@ -111,25 +117,27 @@ function enviarWhatsApp(){
     }
 
     let mensaje =
-        "Hola, deseo realizar el siguiente pedido:%0A%0A";
+        "Hola, deseo realizar el siguiente pedido:\n\n";
 
     let total = 0;
 
     carrito.forEach(producto => {
 
         mensaje +=
-            `• ${producto.nombre} - $${producto.precio}%0A`;
+            `• ${producto.nombre} - $${producto.precio}\n`;
 
         total += producto.precio;
     });
 
-    mensaje += `%0ATotal: $${total}`;
+    mensaje += `\nTotal: $${total}`;
 
     window.open(
-        `https://wa.me/${telefono}?text=${mensaje}`,
+        `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
         "_blank"
     );
 }
+
+/* ESTUDIOS */
 
 const estudiosDiv =
     document.getElementById("estudios");
