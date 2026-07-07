@@ -1,16 +1,111 @@
-.banner-principal {
-  width: 100%;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,.5);
+body{
+    margin:0;
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#0f172a;
+    color:white;
 }
 
-.banner-principal img {
-  width: 100%;
-  height: auto;
-  display: block;
+.header{
+    background:linear-gradient(90deg,#0ea5e9,#2563eb);
+    text-align:center;
+    padding:25px;
 }
 
-.footer {
-  text-align: center;
-  padding: 20px;
+.header h1{
+    margin:0;
+    font-size:40px;
+}
+
+.header p{
+    margin-top:10px;
+}
+
+.banner-principal img{
+    width:100%;
+    display:block;
+}
+
+.aviso{
+    text-align:center;
+    padding:15px;
+    background:#111827;
+}
+
+#catalogo{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
+    margin-right:340px;
+}
+
+.producto{
+    background:#1e293b;
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    transition:.3s;
+}
+
+.producto:hover{
+    transform:translateY(-5px);
+}
+
+.producto img{
+    width:100%;
+    height:180px;
+    object-fit:contain;
+    background:white;
+    border-radius:10px;
+}
+
+.producto h3{
+    font-size:15px;
+}
+
+.producto p{
+    color:#38bdf8;
+    font-size:22px;
+    font-weight:bold;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#22c55e;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#16a34a;
+}
+
+.carrito-flotante{
+    position:fixed;
+    right:20px;
+    top:20px;
+    width:300px;
+    background:white;
+    color:black;
+    padding:15px;
+    border-radius:15px;
+    max-height:80vh;
+    overflow:auto;
+}
+
+.estudio{
+    max-width:800px;
+    margin:20px auto;
+    background:white;
+    color:black;
+    padding:20px;
+    border-radius:15px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
 }
