@@ -35,7 +35,7 @@ productos.forEach(producto => {
     catalogo.innerHTML += `
         <div class="producto">
 
-            ${producto.imagen}
+            producto.imagen}" alt="${producto.nombre}">
 
             <h3>${producto.nombre}</h3>
 
@@ -121,10 +121,10 @@ function enviarWhatsApp(){
 
     mensaje += `\nTotal: $${total}`;
 
-    window.open(
-        `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
-        "_blank"
-    );
+window.open(
+    `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
+    "_blank"
+);
 }
 
     `;
