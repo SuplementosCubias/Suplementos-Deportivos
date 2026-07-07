@@ -137,24 +137,5 @@ function enviarWhatsApp(){
     );
 }
 
-/* ESTUDIOS */
-
-const estudiosDiv =
-    document.getElementById("estudios");
-
-estudios.forEach(estudio => {
-
-    estudiosDiv.innerHTML += `
-        <div class="estudio">
-
-            <h3>${estudio.producto}</h3>
-
-            <p>${estudio.descripcion}</p>
-
-            ${estudio.link}
-                Ver estudio científico
-            </a>
-
-        </div>
     `;
 });
