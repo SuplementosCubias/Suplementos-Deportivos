@@ -151,6 +151,9 @@ button:hover{
 
 .estudios{
     padding:30px;
+    background:#00b4ff;
+    border-radius:15px;
+    margin:20px;
 }
 
 .estudios h2{
