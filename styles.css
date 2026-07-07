@@ -1,158 +1,185 @@
 *{
     margin:0;
     padding:0;
-   *box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 body{
-  * font-family:Segoe UI, Arial, sans*serif;
+    font-family:Segoe UI, Arial, sans-serif;
     background:#f4f6f8;
-   *color:#222;
+    color:#222;
 }
 
+/* HEADER */
+
 .header{
-    backgr*und:#0057ff;
+    background:linear-gradient(90deg,#0066ff,#00b4ff);
     color:white;
-    *ext-align:center;
-    padding:30px*
+    text-align:center;
+    padding:30px;
 }
 
 .header h1{
-    font-size:38px*
+    font-size:42px;
     margin-bottom:10px;
 }
 
-.banne* img{
-    width:100%;
-    display:*lock;
+.header p{
+    font-size:18px;
 }
 
-.aviso{
-    background:#e*eeee;
-    padding:15px;
-    text-a*ign:center;
-    font-weight:600;
-}*
-.contenedor-principal{
-    displa*:flex;
-    gap:20px;
-    padding:2*px;
+/* BANNER */
+
+.banner img{
+    width:100%;
+    display:block;
 }
+
+/* AVISO */
+
+.aviso{
+    background:white;
+    padding:20px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* CONTENIDO */
+
+.contenedor-principal{
+    display:flex;
+    gap:20px;
+    padding:20px;
+}
+
+/* PRODUCTOS */
 
 #catalogo{
     flex:1;
-    *isplay:grid;
-    grid-template-col*mns:repeat(auto-fill,minmax(250px,*fr));
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
     gap:20px;
 }
 
 .producto{
-*   background:white;
-    border-ra*ius:15px;
+    background:white;
+    border-radius:15px;
     overflow:hidden;
-   *box-shadow:0 2px 10px rgba(0,0,0,.*);
+    box-shadow:0 3px 15px rgba(0,0,0,.1);
+    text-align:center;
     transition:.3s;
 }
 
-.product*:hover{
-    transform:translateY(-*px);
+.producto:hover{
+    transform:translateY(-5px);
 }
 
 .producto img{
-    width:1*0%;
+    width:100%;
     height:220px;
-    object-f*t:contain;
+    object-fit:contain;
     background:white;
-}*
+}
+
 .producto h3{
     padding:10px;
- *  min-height:60px;
-    font-size:1*px;
+    min-height:60px;
+    font-size:15px;
 }
 
 .producto p{
-    color:#005*ff;
+    color:#0066ff;
+    font-size:24px;
     font-weight:bold;
-    font*size:24px;
-    padding-bottom:10px*
 }
 
 .producto button{
-    width:90*;
+    width:90%;
     margin-bottom:15px;
 }
 
-.carr*to{
-    width:320px;
-    backgroun*:white;
-    padding:20px;
-    bord*r-radius:15px;
-    box-shadow:0 2p* 10px rgba(0,0,0,.1);
-    height:f*t-content;
-    position:sticky;
-  * top:20px;
-}
+/* BOTONES */
 
 button{
-    backgrou*d:#00b050;
+    background:#00b050;
     color:white;
-    bo*der:none;
+    border:none;
     border-radius:10px;
-*   padding:12px;
-    cursor:pointe*;
+    padding:12px;
+    cursor:pointer;
     font-weight:bold;
 }
 
-button:*over{
-    background:#008d41;
+button:hover{
+    background:#00853a;
 }
 
-.*studios{
+/* CARRITO */
+
+.carrito{
+    width:320px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+    height:fit-content;
+    position:sticky;
+    top:20px;
+}
+
+.carrito h2{
+    margin-bottom:15px;
+}
+
+#total{
+    color:#0066ff;
+    margin-top:15px;
+}
+
+/* ESTUDIOS */
+
+.estudios{
     padding:30px;
 }
 
-.est*dios h2{
+.estudios h2{
     text-align:center;
-  * margin-bottom:20px;
+    margin-bottom:20px;
 }
 
 .estudio{
-*   background:white;
-    padding:2*px;
+    background:white;
+    padding:20px;
+    border-radius:12px;
     margin-bottom:15px;
-    bo*der-radius:10px;
-    box-shadow:0 *px 10px rgba(0,0,0,.1);
+    box-shadow:0 3px 15px rgba(0,0,0,.1);
 }
 
-.estudi* a{
-    color:#0057ff;
-    text-de*oration:none;
-    font-weight:bold*
-}
+/* FOOTER */
 
 footer{
-    background:#111;
- *  color:white;
-    text-align:cent*r;
+    background:#111827;
+    color:white;
+    text-align:center;
     padding:30px;
 }
 
 footer a{
-*   color:#00b4ff;
-    text-decorat*on:none;
+    color:#00b4ff;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.sin-stock{
-    opacit*:.5;
-}
+/* MÓVIL */
 
 @media(max-width:1000px){
-*    .contenedor-principal{
-       *flex-direction:column;
+
+    .contenedor-principal{
+        flex-direction:column;
     }
 
-    *carrito{
+    .carrito{
         width:100%;
-     *  position:static;
+        position:static;
     }
 }
