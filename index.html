@@ -11,43 +11,47 @@
 
 <body>
 
-    <div class="header">
+    <header class="header">
         <h1>ProEvidence El Salvador</h1>
-    </div>
+        <p>Suplementación basada en evidencia científica</p>
+    </header>
 
     <div class="banner-principal">
-        roevidence-banner.jpeg" alt="ProEvidence Banner">
+        -banner.jpeg" alt="Banner ProEvidence">
     </div>
 
-    <h6>
-        Consulte con su médico antes de consumir cualquier suplemento deportivo
-    </h6>
+    <div class="aviso">
+        Consulte con su médico antes de consumir cualquier suplemento deportivo.
+    </div>
 
-    <div class="catalogo" id="catalogo"></div>
+    <main>
+        <div id="catalogo"></div>
+    </main>
 
-    <div class="carrito-flotante">
+    <aside class="carrito-flotante">
         <h2>🛒 Carrito</h2>
 
         <div id="carrito"></div>
 
-        <p id="total"></p>
+        <p id="total">$0</p>
 
         <button onclick="enviarWhatsApp()">
-            Enviar pedido por WhatsApp
+            Enviar Pedido
         </button>
-    </div>
+    </aside>
 
-    <h2>📚 Estudios Científicos</h2>
+    <section>
+        <h2>📚 Estudios Científicos</h2>
+        <div id="estudios"></div>
+    </section>
 
-    <div id="estudios"></div>
-
-    <div class="footer">
-        .calculator.net/macro-calculator.html" target="_blank">
-            Cuenta tus macros aquí
+    <footer>
+        <a href="https://www.calculator.net/macro-calculator.html" target="_blank">
+            Calculadora de Macros
         </a>
 
-        <h2>ProEvidence El Salvador</h2>
-    </div>
+        <p>ProEvidence El Salvador © 2026</p>
+    </footer>
 
     <script src="script.js"></script>
 
