@@ -18,6 +18,12 @@ const productos = [
         nombre: "Creatina Micronizada 60 Servicios",
         precio: 30,
         imagen: "008.jpg"
+    },
+        {
+        id: 4,
+        nombre: "MuscleTech Testosterone Booster for Men",
+        precio: 35,
+        imagen: "006.jpg"
     }
 ];
 
