@@ -33,8 +33,8 @@ const productos = [
     },
         {
         id: 6,
-        nombre: "Vitamina D3 5000 UI",
-        precio: 18,
+        nombre: "Vitamina D-3 5000 IU",
+        precio: 20,
         imagen: "vitaminad3.jpg"
     },  {
         id: 7,
@@ -44,7 +44,7 @@ const productos = [
     },  {
         id: 8,
         nombre: "Omega 3",
-        precio: 20,
+        precio: 22,
         imagen: "omega3.jpg"
         }
 ];
