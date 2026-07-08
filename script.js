@@ -72,18 +72,21 @@ function actualizarCarrito(){
 
         total += producto.precio;
 
+        divCarrito.innerHTML += `
+            <div class="item-carrito">
 
-divCarrito.innerHTML += `
-    <div class="item-carrito">
-        <span>
-            ${producto.nombre} - $${producto.precio}
-        </span>
+                <span>
+                    ${producto.nombre} - $${producto.precio}
+                </span>
 
-        <button class="btn-eliminar" onclick="eliminar(${index})">
-            ❌
-        </button>
-    </div>
+                <button
+                    class="btn-eliminar"
+                    onclick="eliminar(${index})">
+                    ❌
+                </button>
 
+            </div>
+        `;
     });
 
     document.getElementById("total").innerText =
