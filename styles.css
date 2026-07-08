@@ -61,7 +61,6 @@ body{
     width:100%;
     height:220px;
     object-fit:contain;
-    background:white;
     padding:10px;
     display:block;
 }
