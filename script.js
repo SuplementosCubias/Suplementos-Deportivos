@@ -23,7 +23,13 @@ const productos = [
         id: 4,
         nombre: "MuscleTech Testosterone Booster for Men",
         precio: 35,
-        imagen: "006.jpg"
+        imagen: "ashwaganda.jpg"
+    },
+    {
+        id: 5,
+        nombre: "Dymatize Creatine Monohydrate",
+        precio: 40,
+        imagen: "dimatize.jpg"
     }
 ];
 
