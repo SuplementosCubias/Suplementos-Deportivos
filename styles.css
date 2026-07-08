@@ -10,34 +10,6 @@ body{
     color:#fff;
 }
 
-/* HEADER */
-
-.header{
-    background:#000;
-    color:white;
-    text-align:center;
-    padding:30px;
-    border-bottom:3px solid #00b4ff;
-}
-
-.header h1{
-    font-size:42px;
-    margin-bottom:10px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-
-.header p{
-    font-size:18px;
-    color:#00b4ff;
-}
-
-.header p{
-    color:#00b4ff;
-    font-size:18px;
-}
-
 /* BANNER */
 
 .banner img{
@@ -90,9 +62,11 @@ body{
     height:220px;
     object-fit:contain;
     background:white;
+    padding:10px;
 }
 
 .producto h3{
+    color:black;
     padding:10px;
     min-height:60px;
     font-size:15px;
@@ -130,6 +104,7 @@ button:hover{
 .carrito{
     width:320px;
     background:white;
+    color:black;
     padding:20px;
     border-radius:15px;
     box-shadow:0 3px 15px rgba(0,0,0,.15);
@@ -145,32 +120,8 @@ button:hover{
 #total{
     color:#0066ff;
     margin-top:15px;
+    font-weight:bold;
 }
-
-/* ESTUDIOS */
-
-.estudios{
-    padding:30px;
-    background:#00b4ff;
-    border-radius:15px;
-    margin:20px;
-}
-
-.estudios h2{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-
-.estudio{
-    background:white;
-    color:black;
-    padding:20px;
-    border-radius:12px;
-    margin-bottom:15px;
-    box-shadow:0 3px 15px rgba(0,0,0,.1);
-}
-
 
 /* FOOTER */
 
@@ -199,11 +150,4 @@ footer a{
         width:100%;
         position:static;
     }
-}
-
-.producto h3{
-    color:black;
-    padding:10px;
-    min-height:60px;
-    font-size:15px;
 }
