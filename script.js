@@ -38,7 +38,7 @@ const productos = [
         imagen: "vitaminad3.jpg"
     },  {
         id: 7,
-        nombre: "Pre workout johnwick | 8 g citruilina",
+        nombre: "Pre workout johnwick | 8 g citrulina",
         precio: 45,
         imagen: "johnwick.jpg"
     },  {
