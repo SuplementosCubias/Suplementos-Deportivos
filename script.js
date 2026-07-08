@@ -25,12 +25,14 @@ let carrito = [];
 
 const catalogo = document.getElementById("catalogo");
 
+/* CARGAR PRODUCTOS */
+
 productos.forEach(producto => {
 
     catalogo.innerHTML += `
         <div class="producto">
 
-            ${producto.imagen}">
+            ${producto.imagen}
 
             <h3>${producto.nombre}</h3>
 
@@ -43,6 +45,8 @@ productos.forEach(producto => {
         </div>
     `;
 });
+
+/* CARRITO */
 
 function agregarAlCarrito(id){
 
@@ -57,7 +61,8 @@ function agregarAlCarrito(id){
 
 function actualizarCarrito(){
 
-    const divCarrito = document.getElementById("carrito");
+    const divCarrito =
+        document.getElementById("carrito");
 
     let total = 0;
 
@@ -90,6 +95,8 @@ function eliminar(index){
     actualizarCarrito();
 }
 
+/* WHATSAPP */
+
 function enviarWhatsApp(){
 
     if(carrito.length === 0){
@@ -97,13 +104,15 @@ function enviarWhatsApp(){
         return;
     }
 
-    let mensaje = "Hola, deseo realizar el siguiente pedido:\n\n";
+    let mensaje =
+        "Hola, deseo realizar el siguiente pedido:\n\n";
 
     let total = 0;
 
     carrito.forEach(producto => {
 
-        mensaje += `• ${producto.nombre} - $${producto.precio}\n`;
+        mensaje +=
+            `• ${producto.nombre} - $${producto.precio}\n`;
 
         total += producto.precio;
     });
