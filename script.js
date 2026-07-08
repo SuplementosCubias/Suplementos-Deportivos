@@ -30,7 +30,7 @@ productos.forEach(producto => {
     catalogo.innerHTML += `
         <div class="producto">
 
-            ${producto.imagen}
+            producto.imagen}" alt="${producto.nombre}">
 
             <h3>${producto.nombre}</h3>
 
@@ -72,7 +72,6 @@ function actualizarCarrito(){
             <p>
                 ${producto.nombre}
                 - $${producto.precio}
-
                 <button onclick="eliminar(${index})">
                     ❌
                 </button>
@@ -81,7 +80,7 @@ function actualizarCarrito(){
     });
 
     document.getElementById("total").innerText =
-        "Total: $" + total;
+        `Total: $${total}`;
 }
 
 function eliminar(index){
