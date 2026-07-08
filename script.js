@@ -30,7 +30,7 @@ productos.forEach(producto => {
     catalogo.innerHTML += `
         <div class="producto">
 
-            .imagen}" alt="${producto.nombre}">
+            ${producto.imagen}">
 
             <h3>${producto.nombre}</h3>
 
@@ -57,8 +57,7 @@ function agregarAlCarrito(id){
 
 function actualizarCarrito(){
 
-    const divCarrito =
-        document.getElementById("carrito");
+    const divCarrito = document.getElementById("carrito");
 
     let total = 0;
 
@@ -72,6 +71,7 @@ function actualizarCarrito(){
             <p>
                 ${producto.nombre}
                 - $${producto.precio}
+
                 <button onclick="eliminar(${index})">
                     ❌
                 </button>
@@ -97,15 +97,13 @@ function enviarWhatsApp(){
         return;
     }
 
-    let mensaje =
-        "Hola, deseo realizar el siguiente pedido:\n\n";
+    let mensaje = "Hola, deseo realizar el siguiente pedido:\n\n";
 
     let total = 0;
 
     carrito.forEach(producto => {
 
-        mensaje +=
-            `• ${producto.nombre} - $${producto.precio}\n`;
+        mensaje += `• ${producto.nombre} - $${producto.precio}\n`;
 
         total += producto.precio;
     });
