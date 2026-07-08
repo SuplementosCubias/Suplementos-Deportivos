@@ -30,7 +30,23 @@ const productos = [
         nombre: "Dymatize Creatine Monohydrate",
         precio: 40,
         imagen: "dimatize.jpg"
-    }
+    },
+        {
+        id: 6,
+        nombre: "Vitamina D3 5000 UI",
+        precio: 18,
+        imagen: "vitaminad3.jpg"
+    },  {
+        id: 7,
+        nombre: "Pre workout johnwick | 8 g citruilina",
+        precio: 45,
+        imagen: "johnwick.jpg"
+    },  {
+        id: 8,
+        nombre: "Omega 3",
+        precio: 20,
+        imagen: "omega3.jpg"
+        }
 ];
 
 let carrito = [];
