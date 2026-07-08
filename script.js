@@ -30,7 +30,7 @@ productos.forEach(producto => {
     catalogo.innerHTML += `
         <div class="producto">
 
-            producto.imagen}" alt="${producto.nombre}">
+            ${producto.imagen}="${producto.nombre}">
 
             <h3>${producto.nombre}</h3>
 
