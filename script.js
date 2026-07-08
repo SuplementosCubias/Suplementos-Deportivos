@@ -3,7 +3,7 @@ const telefono = "50376600656";
 const productos = [
     {
         id: 1,
-        nombre: "Creatina Planitun 80 Servicios",
+        nombre: "Creatina Planitum 80 Servicios",
         precio: 40,
         imagen: "001.jpg"
     },
@@ -21,8 +21,8 @@ const productos = [
     },
         {
         id: 4,
-        nombre: "MuscleTech Testosterone Booster for Men",
-        precio: 35,
+        nombre: "Ashwagandha optimizada - Suplemento para el manejo del estrés",
+        precio: 20,
         imagen: "ashwaganda.jpg"
     },
     {
@@ -46,6 +46,12 @@ const productos = [
         nombre: "Omega 3",
         precio: 22,
         imagen: "omega3.jpg"
+        },
+        {
+        id: 9,
+        nombre: "MuscleTech - Amplificador de testosterona",
+        precio: 35,
+        imagen: "testosterona.jpg"
         }
 ];
 
