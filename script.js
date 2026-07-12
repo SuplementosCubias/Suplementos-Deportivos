@@ -10,7 +10,7 @@ const productos = [
     {
         id: 2,
         nombre: "Creatina Micronizada 120 Servicios",
-        precio: 55,
+        precio: 50,
         imagen: "014.jpg"
     },
     {
@@ -44,7 +44,7 @@ const productos = [
     },  {
         id: 8,
         nombre: "Omega 3",
-        precio: 22,
+        precio: 20,
         imagen: "omega3.jpg"
         },
         {
