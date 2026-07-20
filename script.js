@@ -39,7 +39,7 @@ const productos = [
     },  {
         id: 7,
         nombre: "Pre workout johnwick | 8 g citrulina",
-        precio: 55,
+        precio: 50,
         imagen: "johnwick.jpg"
     },  {
         id: 8,
