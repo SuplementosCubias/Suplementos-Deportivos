@@ -22,19 +22,19 @@ const productos = [
         {
         id: 4,
         nombre: "Ashwagandha optimizada - Suplemento para el manejo del estrés",
-        precio: 25,
+        precio: SIN STOCK,
         imagen: "ashwaganda.jpg"
     },
     {
         id: 5,
         nombre: "Dymatize Creatine Monohydrate",
-        precio: 45,
+        precio: SIN STOCK,
         imagen: "dimatize.jpg"
     },
         {
         id: 6,
         nombre: "Vitamina D-3 5000 IU",
-        precio: 20,
+        precio: SIN STOCK,
         imagen: "vitaminad3.jpg"
     },  {
         id: 7,
@@ -44,13 +44,13 @@ const productos = [
     },  {
         id: 8,
         nombre: "Omega 3",
-        precio: 20,
+        precio: SIN STOCK,
         imagen: "omega3.jpg"
         },
         {
         id: 9,
         nombre: "MuscleTech - Amplificador de testosterona",
-        precio: 35,
+        precio: SIN STOCK,
         imagen: "testosterona.jpg"
         }
 ];
