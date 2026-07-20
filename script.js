@@ -4,31 +4,31 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum 80 Servicios",
-        precio: 40,
+        precio: 45,
         imagen: "001.jpg"
     },
     {
         id: 2,
         nombre: "Creatina Micronizada 120 Servicios",
-        precio: 50,
+        precio: 55,
         imagen: "014.jpg"
     },
     {
         id: 3,
         nombre: "Creatina Micronizada 60 Servicios",
-        precio: 30,
+        precio: 35,
         imagen: "008.jpg"
     },
         {
         id: 4,
         nombre: "Ashwagandha optimizada - Suplemento para el manejo del estrés",
-        precio: 20,
+        precio: 25,
         imagen: "ashwaganda.jpg"
     },
     {
         id: 5,
         nombre: "Dymatize Creatine Monohydrate",
-        precio: 40,
+        precio: 45,
         imagen: "dimatize.jpg"
     },
         {
@@ -39,7 +39,7 @@ const productos = [
     },  {
         id: 7,
         nombre: "Pre workout johnwick | 8 g citrulina",
-        precio: 45,
+        precio: 55,
         imagen: "johnwick.jpg"
     },  {
         id: 8,
