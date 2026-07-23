@@ -22,7 +22,7 @@ const productos = [
         {
         id: 4,
         nombre: "Ashwagandha optimizada - Suplemento para el manejo del estrés",
-        precio: 20,
+        precio: 25,
         imagen: "ashwaganda.jpg"
     },
     {
