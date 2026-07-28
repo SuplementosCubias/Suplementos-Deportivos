@@ -15,7 +15,7 @@ const productos = [
     },
     {
         id: 3,
-        nombre: "Creatina Micronizada 60 Servicios",
+        nombre: "SIN STOCK",
         precio: 35,
         imagen: "008.jpg"
     },
@@ -27,7 +27,7 @@ const productos = [
     },
     {
         id: 5,
-        nombre: "Dymatize Creatine Monohydrate",
+        nombre: "SIN STOCK",
         precio: 45,
         imagen: "dimatize.jpg"
     },
