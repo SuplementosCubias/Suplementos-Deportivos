@@ -4,13 +4,13 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum 80 Servicios",
-        precio: 45,
+        precio: 40,
         imagen: "001.jpg"
     },
     {
         id: 2,
         nombre: "Creatina Micronizada 120 Servicios",
-        precio: 55,
+        precio: 50,
         imagen: "014.jpg"
     },
     {
@@ -21,7 +21,7 @@ const productos = [
     },
         {
         id: 4,
-        nombre: "Ashwagandha optimizada - Suplemento para el manejo del estrés",
+        nombre: "SIN STOCK",
         precio: 25,
         imagen: "ashwaganda.jpg"
     },
@@ -33,7 +33,7 @@ const productos = [
     },
         {
         id: 6,
-        nombre: "Vitamina D-3 5000 IU",
+        nombre: "SIN STOCK",
         precio: 20,
         imagen: "vitaminad3.jpg"
     },  {
@@ -44,12 +44,12 @@ const productos = [
     },  {
         id: 8,
         nombre: "Omega 3",
-        precio: 25,
+        precio: 23,
         imagen: "omega3.jpg"
         },
         {
         id: 9,
-        nombre: "MuscleTech - Amplificador de testosterona",
+        nombre: "SIN STOCK",
         precio: 35,
         imagen: "testosterona.jpg"
         }
