@@ -21,19 +21,19 @@ const productos = [
     },
         {
         id: 4,
-        nombre: "SIN STOCK",
+        nombre: "Adaptogeno Ashwaganda para estrés",
         precio: 25,
         imagen: "ashwaganda.jpg"
     },
     {
         id: 5,
-        nombre: "SIN STOCK",
+        nombre: "Dimatize Creapure - Creatina 60 servicios",
         precio: 45,
         imagen: "dimatize.jpg"
     },
         {
         id: 6,
-        nombre: "SIN STOCK",
+        nombre: "Vitamina D3 5000 IU",
         precio: 20,
         imagen: "vitaminad3.jpg"
     },  {
@@ -43,13 +43,13 @@ const productos = [
         imagen: "johnwick.jpg"
     },  {
         id: 8,
-        nombre: "Omega 3",
-        precio: 23,
+        nombre: "Omega 3 - 100 capsulas",
+        precio: 24,
         imagen: "omega3.jpg"
         },
         {
         id: 9,
-        nombre: "SIN STOCK",
+        nombre: "Testosterona",
         precio: 35,
         imagen: "testosterona.jpg"
         }
