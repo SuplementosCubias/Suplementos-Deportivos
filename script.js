@@ -44,7 +44,7 @@ const productos = [
     },  {
         id: 8,
         nombre: "Omega 3 - 100 capsulas",
-        precio: 24,
+        precio: 25,
         imagen: "omega3.jpg"
         },
         {
