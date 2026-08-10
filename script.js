@@ -13,23 +13,11 @@ const productos = [
         precio: 55,
         imagen: "014.jpg"
     },
-    {
-        id: 3,
-        nombre: "SIN STOCK",
-        precio: 35,
-        imagen: "008.jpg"
-    },
         {
         id: 4,
         nombre: "Adaptogeno Ashwaganda para estrés",
         precio: 25,
         imagen: "ashwaganda.jpg"
-    },
-    {
-        id: 5,
-        nombre: "SIN STOCK",
-        precio: 45,
-        imagen: "dimatize.jpg"
     },
         {
         id: 6,
@@ -37,21 +25,10 @@ const productos = [
         precio: 20,
         imagen: "vitaminad3.jpg"
     },  {
-        id: 7,
-        nombre: "SIN STOCK",
-        precio: 50,
-        imagen: "johnwick.jpg"
-    },  {
         id: 8,
         nombre: "Omega 3",
         precio: 25,
         imagen: "omega3.jpg"
-        },
-        {
-        id: 9,
-        nombre: "SIN STOCK",
-        precio: 35,
-        imagen: "testosterona.jpg"
         },
         {
         id: 10,
