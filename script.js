@@ -4,13 +4,13 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum 80 Servicios",
-        precio: 40,
+        precio: 45,
         imagen: "001.jpg"
     },
     {
         id: 2,
         nombre: "Creatina Micronizada 120 Servicios",
-        precio: 50,
+        precio: 55,
         imagen: "014.jpg"
     },
     {
@@ -27,7 +27,7 @@ const productos = [
     },
     {
         id: 5,
-        nombre: "Dimatize Creapure - Creatina 60 servicios",
+        nombre: "SIN STOCK",
         precio: 45,
         imagen: "dimatize.jpg"
     },
@@ -38,21 +38,27 @@ const productos = [
         imagen: "vitaminad3.jpg"
     },  {
         id: 7,
-        nombre: "Pre workout johnwick | 8 g citrulina",
+        nombre: "SIN STOCK",
         precio: 50,
         imagen: "johnwick.jpg"
     },  {
         id: 8,
-        nombre: "Omega 3 - 100 capsulas",
+        nombre: "Omega 3",
         precio: 25,
         imagen: "omega3.jpg"
         },
         {
         id: 9,
-        nombre: "Testosterona",
+        nombre: "SIN STOCK",
         precio: 35,
         imagen: "testosterona.jpg"
-        }
+        },
+        {
+        id: 10,
+        nombre: "Zinc",
+        precio: 20,
+        imagen: "zinc.jpg"
+        } 
 ];
 
 let carrito = [];
