@@ -26,15 +26,21 @@ const productos = [
         imagen: "vitaminad3.jpg"
     },  {
         id: 8,
-        nombre: "Omega 3",
+        nombre: "NO DISPONIBLE",
         precio: 25,
         imagen: "omega3.jpg"
         },
         {
         id: 10,
-        nombre: "Zinc",
+        nombre: "NO DISPONIBLE",
         precio: 20,
         imagen: "zinc.jpg"
+        },
+        {
+        id: 11,
+        nombre: "CITRATO & MAGNESIO",
+        precio: 25,
+        imagen: "MC.jpeg"
         } 
 ];
 
