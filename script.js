@@ -42,6 +42,7 @@ const productos = [
         precio: 25,
         imagen: "magnesionowfods.jpg"
         },
+        {
         id: 12,
         nombre: "Creatina Dimatize (99.9% PUREZA)",
         precio: 45,
