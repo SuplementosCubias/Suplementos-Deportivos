@@ -3,48 +3,48 @@ const telefono = "50376600656";
 const productos = [
     {
         id: 1,
-        nombre: "Creatina Planitum 80 Servicios",
+        nombre: "Creatina Planitum - 80 Servicios",
         precio: 40,
         imagen: "001.jpg"
     },
     {
         id: 2,
-        nombre: "Creatina Micronizada 120 Servicios",
+        nombre: "Creatina ON - 120 Servicios",
         precio: 50,
         imagen: "014.jpg"
     },
         {
         id: 4,
-        nombre: "Adaptogeno Ashwaganda para estrés",
+        nombre: "Ashwaganda - 60 Servicios",
         precio: 25,
         imagen: "ashwaganda.jpg"
     },
         {
         id: 6,
-        nombre: "Vitamina D3 5000 IU",
+        nombre: "Vitamina D3 - 120 servicios",
         precio: 20,
         imagen: "vitaminad3.jpg"
     },  {
         id: 8,
-        nombre: "Unidades en camino - Omega 3",
+        nombre: "Unidades en camino - Omega 3 - 100 servicios",
         precio: 25,
         imagen: "omega3.jpg"
         },
         {
         id: 10,
-        nombre: "Zinc - 100 Capsulas",
+        nombre: "Zinc - 100 Servicios",
         precio: 20,
         imagen: "zinc.jpg"
         },
         {
         id: 11,
-        nombre: "CITRATO DE MAGNESIO",
+        nombre: "Citrato de Magnesio - 120 Servicios",
         precio: 25,
         imagen: "magnesionowfods.jpg"
         },
         {
         id: 12,
-        nombre: "Creatina Dimatize (99.9% PUREZA)",
+        nombre: "Creatina Dimatize (99.9% PUREZA) - 60 Servicios",
         precio: 45,
         imagen: "dimatize.jpg"
         }
