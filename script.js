@@ -4,13 +4,13 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum 80 Servicios",
-        precio: 45,
+        precio: 40,
         imagen: "001.jpg"
     },
     {
         id: 2,
         nombre: "Creatina Micronizada 120 Servicios",
-        precio: 55,
+        precio: 50,
         imagen: "014.jpg"
     },
         {
@@ -32,7 +32,7 @@ const productos = [
         },
         {
         id: 10,
-        nombre: "NO DISPONIBLE",
+        nombre: "Zinc - 100 Capsulas",
         precio: 20,
         imagen: "zinc.jpg"
         },
