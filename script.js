@@ -40,7 +40,7 @@ const productos = [
         id: 11,
         nombre: "CITRATO & MAGNESIO",
         precio: 25,
-        imagen: "MC.jpeg"
+        imagen: "magnesionowfods.jpg"
         } 
 ];
 
