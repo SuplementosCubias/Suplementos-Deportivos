@@ -26,7 +26,7 @@ const productos = [
         imagen: "vitaminad3.jpg"
     },  {
         id: 8,
-        nombre: "NO DISPONIBLE",
+        nombre: "Unidades en camino - Omega 3",
         precio: 25,
         imagen: "omega3.jpg"
         },
