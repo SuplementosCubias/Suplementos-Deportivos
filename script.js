@@ -27,7 +27,7 @@ const productos = [
     },  {
         id: 8,
         nombre: "Omega 3 - 100 servicios",
-        precio: 22,
+        precio: 23,
         imagen: "omega3.jpg"
         },
         {
