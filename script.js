@@ -59,6 +59,24 @@ const productos = [
         nombre: "Vitamina C - 100 Servicios",
         precio: 20,
         imagen: "vitaminac.jpg"
+        },
+        {
+        id: 14,
+        nombre: "Multi Vitaminas para mujeres GOMITAS - 80 Servicios",
+        precio: 20,
+        imagen: "mutivitaminasconcolageno.jpg"
+        },
+        {
+        id: 15,
+        nombre: "Multi Vitaminas sabor fresa GOMITAS - 30 Servicios",
+        precio: 20,
+        imagen: "gomitas1.jpg"
+        },
+        {
+        id: 16,
+        nombre: "Multi Vitaminas One Daily - 100 Servicios",
+        precio: 18,
+        imagen: "onedaily.jpg"
         }
 ];
 
