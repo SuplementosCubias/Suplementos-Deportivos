@@ -4,7 +4,7 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum - 80 Servicios",
-        precio: 40,
+        precio: 45,
         imagen: "001.jpg"
     },
     {
@@ -26,8 +26,8 @@ const productos = [
         imagen: "vitaminad3.jpg"
     },  {
         id: 8,
-        nombre: "Unidades en camino - Omega 3 - 100 servicios",
-        precio: 25,
+        nombre: "Omega 3 - 100 servicios",
+        precio: 22,
         imagen: "omega3.jpg"
         },
         {
@@ -39,7 +39,7 @@ const productos = [
         {
         id: 11,
         nombre: "Citrato de Magnesio - 120 Servicios",
-        precio: 25,
+        precio: 22,
         imagen: "magnesionowfods.jpg"
         },
         {
@@ -47,6 +47,18 @@ const productos = [
         nombre: "Creatina Dimatize (99.9% PUREZA) - 60 Servicios",
         precio: 45,
         imagen: "dimatize.jpg"
+        },
+        {
+        id: 13,
+        nombre: "Collagen Peptides for Women & Men, GLP-1 - 150 Servicios",
+        precio: 35,
+        imagen: "colagenoforwoman.jpeg"
+        },
+        {
+        id: 13,
+        nombre: "Vitamina C - 100 Servicios",
+        precio: 20,
+        imagen: "vitaminac.jpeg"
         }
 ];
 
