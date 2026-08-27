@@ -52,13 +52,13 @@ const productos = [
         id: 13,
         nombre: "Collagen Peptides for Women & Men, GLP-1 - 150 Servicios",
         precio: 35,
-        imagen: "colagenoforwoman.jpeg"
+        imagen: "colagenoforwoman.jpg"
         },
         {
         id: 13,
         nombre: "Vitamina C - 100 Servicios",
         precio: 20,
-        imagen: "vitaminac.jpeg"
+        imagen: "vitaminac.jpg"
         }
 ];
 
