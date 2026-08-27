@@ -4,7 +4,7 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum - 80 Servicios",
-        precio: 45,
+        precio: 40,
         imagen: "001.jpg"
     },
     {
@@ -45,7 +45,7 @@ const productos = [
         {
         id: 12,
         nombre: "Creatina Dimatize (99.9% PUREZA) - 60 Servicios",
-        precio: 45,
+        precio: 40,
         imagen: "dimatize.jpg"
         },
         {
