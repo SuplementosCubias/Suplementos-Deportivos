@@ -64,7 +64,7 @@ const productos = [
         id: 14,
         nombre: "Suplemento en gomitas para cabello, piel y uñas 90 Servicios",
         precio: 20,
-        imagen: "20624362.jpg"
+        imagen: "20624362.jpeg"
         },
         {
         id: 15,
