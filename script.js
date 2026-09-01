@@ -62,9 +62,9 @@ const productos = [
         },
         {
         id: 14,
-        nombre: "Multi Vitaminas para mujeres GOMITAS - 80 Servicios",
+        nombre: "Suplemento en gomitas para cabello, piel y uñas 90 Servicios",
         precio: 20,
-        imagen: "mutivitaminasconcolageno.jpg"
+        imagen: "20624362.jpg"
         },
         {
         id: 15,
