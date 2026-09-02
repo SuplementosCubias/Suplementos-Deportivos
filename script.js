@@ -17,7 +17,7 @@ const productos = [
         id: 4,
         nombre: "Ashwaganda - 60 Servicios",
         precio: 25,
-        imagen: "ashwaganda.jpg"
+        imagen: "ashwagandah.jpg"
     },
         {
         id: 6,
