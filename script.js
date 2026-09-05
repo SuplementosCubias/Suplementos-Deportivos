@@ -77,6 +77,12 @@ const productos = [
         nombre: "Multi Vitaminas One Daily - 100 Servicios",
         precio: 18,
         imagen: "onedaily.jpg"
+        },
+        {
+        id: 17,
+        nombre: "Melatonina 3 mg con sabor a fresa - 90 Servicios",
+        precio: 20,
+        imagen: "melatonina001.png"
         }
 ];
 
