@@ -4,13 +4,13 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum - 80 Servicios",
-        precio: 40,
+        precio: 45,
         imagen: "001.jpg"
     },
     {
         id: 2,
         nombre: "Creatina ON - 120 Servicios",
-        precio: 50,
+        precio: 55,
         imagen: "014.jpg"
     },
         {
@@ -27,7 +27,7 @@ const productos = [
     },  {
         id: 8,
         nombre: "Omega 3 - 100 servicios",
-        precio: 23,
+        precio: 25,
         imagen: "omega3.jpg"
         },
         {
@@ -39,47 +39,17 @@ const productos = [
         {
         id: 11,
         nombre: "Citrato de Magnesio - 120 Servicios",
-        precio: 22,
+        precio: 25,
         imagen: "magnesionowfods.jpg"
         },
         {
         id: 12,
         nombre: "Creatina Dimatize (99.9% PUREZA) - 60 Servicios",
-        precio: 40,
+        precio: 45,
         imagen: "dimatize.jpg"
         },
         {
         id: 13,
-        nombre: "Collagen Peptides for Women & Men, GLP-1 - 150 Servicios",
-        precio: 35,
-        imagen: "colagenoforwoman.jpg"
-        },
-        {
-        id: 13,
-        nombre: "Vitamina C - 100 Servicios",
-        precio: 20,
-        imagen: "vitaminac.jpg"
-        },
-        {
-        id: 14,
-        nombre: "Suplemento en gomitas para cabello, piel y uñas 90 Servicios",
-        precio: 20,
-        imagen: "20624362.jpeg"
-        },
-        {
-        id: 15,
-        nombre: "Multi Vitaminas sabor fresa GOMITAS - 30 Servicios",
-        precio: 20,
-        imagen: "gomitas1.jpg"
-        },
-        {
-        id: 16,
-        nombre: "Multi Vitaminas One Daily - 100 Servicios",
-        precio: 18,
-        imagen: "onedaily.jpg"
-        },
-        {
-        id: 17,
         nombre: "Melatonina 3 mg con sabor a fresa - 90 Servicios",
         precio: 20,
         imagen: "melatonina001.png"
