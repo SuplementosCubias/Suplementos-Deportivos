@@ -4,20 +4,14 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum - 80 Servicios",
-        precio: 45,
+        precio: 40,
         imagen: "001.jpg"
     },
     {
         id: 2,
         nombre: "Creatina ON - 120 Servicios",
-        precio: 55,
+        precio: 50,
         imagen: "014.jpg"
-    },
-        {
-        id: 4,
-        nombre: "Ashwaganda - 60 Servicios",
-        precio: 25,
-        imagen: "ashwagandah.jpg"
     },
         {
         id: 6,
