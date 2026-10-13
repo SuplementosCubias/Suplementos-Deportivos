@@ -15,14 +15,14 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum - 80 Servicios",
-        precio: 40,
+        precio: 45,
         imagen: "001.jpg",
         descripcion: "Creatina monohidratada para apoyar fuerza y rendimiento en el entrenamiento."
     },
     {
         id: 2,
         nombre: "Creatina ON - 120 Servicios",
-        precio: 50,
+        precio: 55,
         imagen: "014.jpg",
         descripcion: "Creatina de Optimum Nutrition, un envase de 120 servicios para varios meses de uso."
     },
