@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProEvidence El Salvador</title>
+    <title>ProEvidence El Salvador | Suplementos deportivos</title>
+    <meta name="description" content="Suplementos deportivos importados de Estados Unidos en El Salvador: creatina, vitamina D3, omega 3, zinc, magnesio y más. Haz tu pedido por WhatsApp.">
+    <meta property="og:title" content="ProEvidence El Salvador | Suplementos deportivos">
+    <meta property="og:description" content="Suplementos deportivos importados de Estados Unidos. Haz tu pedido fácil por WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="roevidence-banner.jpeg">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -20,33 +25,126 @@
         </p>
     </section>
 
+    <!-- CONFIANZA -->
+    <section class="confianza">
+        <div class="confianza-item">
+            <span class="confianza-icono">🇺🇸</span>
+            <h3>Importados de EE. UU.</h3>
+            <p>Productos traídos directamente desde Estados Unidos.</p>
+        </div>
+        <div class="confianza-item">
+            <span class="confianza-icono">💬</span>
+            <h3>Atención por WhatsApp</h3>
+            <p>Te respondemos y coordinamos tu pedido directamente.</p>
+        </div>
+        <div class="confianza-item">
+            <span class="confianza-icono">🚚</span>
+            <h3>Envíos</h3>
+            <p>Coordinamos la entrega según tu zona al confirmar tu pedido.</p>
+        </div>
+        <div class="confianza-item">
+            <span class="confianza-icono">💳</span>
+            <h3>Formas de pago</h3>
+            <p>Te indicamos las opciones de pago disponibles al confirmar.</p>
+        </div>
+    </section>
+
     <main class="contenedor-principal">
 
-        <section id="catalogo"></section>
+        <section class="zona-catalogo">
+            <input
+                type="search"
+                id="buscador"
+                class="buscador"
+                placeholder="🔍 Buscar producto (creatina, omega, zinc...)"
+                aria-label="Buscar producto">
+            <div id="catalogo"></div>
+            <p id="sin-resultados" class="sin-resultados" hidden>
+                No encontramos productos con esa búsqueda.
+            </p>
+        </section>
 
-        <aside class="carrito">
-            <h2>🛒 Carrito</h2>
+        <aside class="carrito" id="panel-carrito">
+            <div class="carrito-cabecera">
+                <h2>🛒 Carrito</h2>
+                <button
+                    type="button"
+                    class="btn-cerrar-carrito"
+                    id="btn-cerrar-carrito"
+                    aria-label="Cerrar carrito">✕</button>
+            </div>
 
             <div id="carrito"></div>
 
             <h3 id="total">Total: $0</h3>
 
-            <button onclick="enviarWhatsApp()">
-                Enviar Pedido por WhatsApp
-            </button>
+            <form id="form-pedido" class="form-pedido" autocomplete="off">
+                <label for="cliente-nombre">Tu nombre</label>
+                <input type="text" id="cliente-nombre" placeholder="Ej: Carlos Pérez" required>
+
+                <label for="cliente-zona">Zona o dirección de entrega</label>
+                <input type="text" id="cliente-zona" placeholder="Ej: Soyapango, San Salvador" required>
+
+                <label for="cliente-pago">Forma de pago</label>
+                <select id="cliente-pago"></select>
+
+                <button type="submit">Enviar pedido por WhatsApp</button>
+                <button type="button" class="btn-vaciar" id="btn-vaciar">Vaciar carrito</button>
+            </form>
         </aside>
 
     </main>
 
-<footer>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5F9Vph5wLBhPV4_f0Fo5bMB5ly8Ppv3kkSjKcC9uVESWq7w/viewform?usp=header"_blank">
-        Formulario Link
-    </a>
+    <!-- QUIÉNES SOMOS / PREGUNTAS FRECUENTES -->
+    <section class="info">
+        <div class="info-bloque">
+            <h2>¿Quiénes somos?</h2>
+            <p>
+                ProEvidence El Salvador es una tienda en línea de suplementación deportiva.
+                Importamos productos desde Estados Unidos y atendemos todos los pedidos
+                directamente por WhatsApp, para que sepas siempre con quién estás hablando.
+            </p>
+        </div>
 
-    <p>ProEvidence El Salvador © 2025</p>
-</footer>
+        <div class="info-bloque">
+            <h2>Preguntas frecuentes</h2>
+            <details>
+                <summary>¿Cómo hago mi pedido?</summary>
+                <p>Agrega los productos al carrito, escribe tu nombre y zona, y presiona "Enviar pedido por WhatsApp". Te confirmamos disponibilidad y entrega.</p>
+            </details>
+            <details>
+                <summary>¿Cómo pago?</summary>
+                <p>Al confirmar tu pedido por WhatsApp te indicamos las formas de pago disponibles.</p>
+            </details>
+            <details>
+                <summary>¿Cómo es la entrega?</summary>
+                <p>Coordinamos el envío contigo según tu zona. Los detalles se acuerdan por WhatsApp.</p>
+            </details>
+            <details>
+                <summary>¿Son productos originales?</summary>
+                <p>Trabajamos con marcas importadas desde Estados Unidos. Si tienes dudas sobre un producto, escríbenos.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5F9Vph5wLBhPV4_f0Fo5bMB5ly8Ppv3kkSjKcC9uVESWq7w/viewform?usp=header" target="_blank" rel="noopener">
+            Formulario Link
+        </a>
+
+        <p>ProEvidence El Salvador © <span id="anio">2026</span></p>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DEL CARRITO (móvil) -->
+    <button type="button" class="carrito-flotante" id="btn-carrito-flotante" aria-label="Abrir carrito">
+        🛒 <span id="flotante-cantidad">0</span> · <span id="flotante-total">$0</span>
+    </button>
+
+    <!-- AVISO AL AGREGAR -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
