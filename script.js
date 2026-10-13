@@ -68,13 +68,6 @@ const productos = [
         precio: 20,
         imagen: "melatonina001.png",
         descripcion: "Melatonina de 3 mg con sabor a fresa, en presentación de 90 servicios."
-    },
-    {
-        id: 14,
-        nombre: "Creatina NUTREX - 60 Servicios",
-        precio: 25,
-        imagen: "nutrex60s.jpg",
-        descripcion: "Mejora tu rendimiento en tus entrenamientos con una de las creatinas mejores posicionadas en el mercado."
     }
 ];
 
@@ -337,6 +330,210 @@ formPedido.addEventListener("submit", evento => {
 });
 
 /* =========================================
+   PEDIDO PERSONALIZADO
+   ========================================= */
+
+const formPersonalizado = document.getElementById("form-personalizado");
+const inputFoto = document.getElementById("pers-foto");
+const vistaFoto = document.getElementById("vista-foto");
+const vistaFotoImg = document.getElementById("vista-foto-img");
+const avisoPersonalizado = document.getElementById("aviso-personalizado");
+
+const TAMANO_MAXIMO_FOTO = 8 * 1024 * 1024; // 8 MB
+
+function quitarFoto() {
+    if (vistaFotoImg.src) {
+        URL.revokeObjectURL(vistaFotoImg.src);
+    }
+    vistaFotoImg.removeAttribute("src");
+    inputFoto.value = "";
+    vistaFoto.hidden = true;
+}
+
+inputFoto.addEventListener("change", () => {
+    const archivo = inputFoto.files[0];
+
+    if (!archivo) {
+        quitarFoto();
+        return;
+    }
+
+    if (!archivo.type.startsWith("image/")) {
+        alert("Por favor elige un archivo de imagen.");
+        quitarFoto();
+        return;
+    }
+
+    if (archivo.size > TAMANO_MAXIMO_FOTO) {
+        alert("La foto es muy pesada (máximo 8 MB). Elige una más pequeña.");
+        quitarFoto();
+        return;
+    }
+
+    if (vistaFotoImg.src) {
+        URL.revokeObjectURL(vistaFotoImg.src);
+    }
+    vistaFotoImg.src = URL.createObjectURL(archivo);
+    vistaFoto.hidden = false;
+});
+
+document.getElementById("btn-quitar-foto").addEventListener("click", quitarFoto);
+
+formPersonalizado.addEventListener("submit", evento => {
+    evento.preventDefault();
+
+    const producto = document.getElementById("pers-producto").value.trim();
+    const marca = document.getElementById("pers-marca").value.trim();
+    const cantidad = document.getElementById("pers-cantidad").value || "1";
+    const enlace = document.getElementById("pers-enlace").value.trim();
+    const detalles = document.getElementById("pers-detalles").value.trim();
+    const nombre = document.getElementById("pers-nombre").value.trim();
+    const zona = document.getElementById("pers-zona").value.trim();
+    const tieneFoto = inputFoto.files.length > 0;
+
+    let mensaje = "Hola, quiero consultar por un producto que no está en el catálogo:\n\n";
+    mensaje += `Producto: ${producto}`;
+    if (marca) mensaje += `\nMarca/presentación: ${marca}`;
+    mensaje += `\nCantidad: ${cantidad}`;
+    if (enlace) mensaje += `\nEnlace: ${enlace}`;
+    if (detalles) mensaje += `\nDetalles: ${detalles}`;
+    if (tieneFoto) mensaje += "\n\nTengo una foto del producto, te la envío en este chat.";
+    mensaje += `\n\nNombre: ${nombre}`;
+    mensaje += `\nZona de entrega: ${zona}`;
+
+    window.open(
+        `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
+        "_blank"
+    );
+
+    avisoPersonalizado.textContent = tieneFoto
+        ? "Se abrió WhatsApp con tu consulta. Recuerda adjuntar tu foto en el chat con el clip 📎 antes de enviar."
+        : "Se abrió WhatsApp con tu consulta. Presiona enviar y te responderemos pronto.";
+    avisoPersonalizado.hidden = false;
+});
+
+/* =========================================
+   RESEÑAS DE CLIENTES
+   ========================================= */
+
+// Reseñas publicadas en el sitio.
+// Agrega aquí SOLO reseñas reales y con permiso del cliente.
+// Para cada una, sube la foto al repositorio y escribe su nombre de archivo en "foto".
+// Si no hay foto, deja foto: "".
+//
+// Ejemplo de cómo agregar una (cópialo dentro de los corchetes con datos reales):
+//
+// {
+//     nombre: "Nombre del cliente",
+//     producto: "Creatina ON",
+//     estrellas: 5,
+//     comentario: "Texto de la reseña.",
+//     foto: "resena1.jpg"
+// },
+const resenas = [
+];
+
+function renderResenas() {
+    const lista = document.getElementById("lista-resenas");
+    const sinResenas = document.getElementById("sin-resenas");
+
+    lista.innerHTML = resenas.map(r => {
+        const estrellas = Math.min(5, Math.max(1, Number(r.estrellas) || 5));
+        const foto = r.foto
+            ? `<img src="${escapar(r.foto)}" alt="Foto de ${escapar(r.nombre)}" loading="lazy">`
+            : "";
+
+        return `
+            <article class="resena">
+                ${foto}
+                <div class="resena-estrellas" aria-label="${estrellas} de 5 estrellas">
+                    ${"★".repeat(estrellas)}${"☆".repeat(5 - estrellas)}
+                </div>
+                <p class="resena-texto">${escapar(r.comentario)}</p>
+                <p class="resena-autor">
+                    — ${escapar(r.nombre)}${r.producto ? ` · ${escapar(r.producto)}` : ""}
+                </p>
+            </article>
+        `;
+    }).join("");
+
+    sinResenas.hidden = resenas.length > 0;
+}
+
+/* Vista previa de la foto del formulario de reseñas */
+
+const resInputFoto = document.getElementById("res-foto");
+const resVistaFoto = document.getElementById("res-vista-foto");
+const resVistaFotoImg = document.getElementById("res-vista-foto-img");
+
+function resQuitarFoto() {
+    if (resVistaFotoImg.src) {
+        URL.revokeObjectURL(resVistaFotoImg.src);
+    }
+    resVistaFotoImg.removeAttribute("src");
+    resInputFoto.value = "";
+    resVistaFoto.hidden = true;
+}
+
+resInputFoto.addEventListener("change", () => {
+    const archivo = resInputFoto.files[0];
+
+    if (!archivo) {
+        resQuitarFoto();
+        return;
+    }
+
+    if (!archivo.type.startsWith("image/")) {
+        alert("Por favor elige un archivo de imagen.");
+        resQuitarFoto();
+        return;
+    }
+
+    if (archivo.size > TAMANO_MAXIMO_FOTO) {
+        alert("La foto es muy pesada (máximo 8 MB). Elige una más pequeña.");
+        resQuitarFoto();
+        return;
+    }
+
+    if (resVistaFotoImg.src) {
+        URL.revokeObjectURL(resVistaFotoImg.src);
+    }
+    resVistaFotoImg.src = URL.createObjectURL(archivo);
+    resVistaFoto.hidden = false;
+});
+
+document.getElementById("res-btn-quitar-foto").addEventListener("click", resQuitarFoto);
+
+document.getElementById("form-resena").addEventListener("submit", evento => {
+    evento.preventDefault();
+
+    const nombre = document.getElementById("res-nombre").value.trim();
+    const producto = document.getElementById("res-producto").value.trim();
+    const estrellas = Number(document.getElementById("res-estrellas").value);
+    const comentario = document.getElementById("res-comentario").value.trim();
+    const tieneFoto = resInputFoto.files.length > 0;
+    const aviso = document.getElementById("aviso-resena");
+
+    let mensaje = "Hola, quiero dejar mi reseña:\n\n";
+    mensaje += `Nombre: ${nombre}`;
+    if (producto) mensaje += `\nProducto: ${producto}`;
+    mensaje += `\nCalificación: ${"★".repeat(estrellas)}${"☆".repeat(5 - estrellas)} (${estrellas}/5)`;
+    mensaje += `\nComentario: ${comentario}`;
+    if (tieneFoto) mensaje += "\n\nTe envío mi foto en este chat.";
+    mensaje += "\n\nAutorizo que mi reseña se publique en el sitio.";
+
+    window.open(
+        `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
+        "_blank"
+    );
+
+    aviso.textContent = tieneFoto
+        ? "Se abrió WhatsApp con tu reseña. Recuerda adjuntar tu foto en el chat con el clip 📎 antes de enviar. ¡Gracias!"
+        : "Se abrió WhatsApp con tu reseña. Presiona enviar. ¡Gracias por tu opinión!";
+    aviso.hidden = false;
+});
+
+/* =========================================
    INICIO
    ========================================= */
 
@@ -351,3 +548,4 @@ document.getElementById("anio").textContent = new Date().getFullYear();
 
 mostrarProductos(productos);
 actualizarCarrito();
+renderResenas();

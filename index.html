@@ -61,6 +61,7 @@
             <div id="catalogo"></div>
             <p id="sin-resultados" class="sin-resultados" hidden>
                 No encontramos productos con esa búsqueda.
+                <a href="#pedido-personalizado">¿No lo encuentras? Pídelo aquí</a>
             </p>
         </section>
 
@@ -94,6 +95,141 @@
         </aside>
 
     </main>
+
+    <!-- PEDIDO PERSONALIZADO -->
+    <section class="personalizado" id="pedido-personalizado">
+        <h2>¿No encuentras lo que buscas?</h2>
+        <p class="personalizado-intro">
+            Cuéntanos qué producto quieres y te escribimos por WhatsApp para confirmarte
+            disponibilidad y precio.
+        </p>
+
+        <form id="form-personalizado" class="form-personalizado" autocomplete="off">
+            <div class="campo">
+                <label for="pers-producto">Nombre del producto *</label>
+                <input type="text" id="pers-producto" maxlength="120" placeholder="Ej: Proteína Whey Gold Standard" required>
+            </div>
+
+            <div class="campo">
+                <label for="pers-marca">Marca o presentación (opcional)</label>
+                <input type="text" id="pers-marca" maxlength="120" placeholder="Ej: Optimum Nutrition, 5 lb, chocolate">
+            </div>
+
+            <div class="campo campo-corto">
+                <label for="pers-cantidad">Cantidad</label>
+                <input type="number" id="pers-cantidad" min="1" max="99" value="1">
+            </div>
+
+            <div class="campo">
+                <label for="pers-enlace">Enlace de referencia (opcional)</label>
+                <input type="url" id="pers-enlace" maxlength="300" placeholder="https://...">
+            </div>
+
+            <div class="campo campo-ancho">
+                <label for="pers-detalles">Detalles (opcional)</label>
+                <textarea id="pers-detalles" rows="3" maxlength="500" placeholder="Sabor, tamaño, para qué lo quieres, o cualquier dato que ayude a encontrarlo."></textarea>
+            </div>
+
+            <div class="campo campo-ancho">
+                <label for="pers-foto">Foto del producto (opcional)</label>
+                <input type="file" id="pers-foto" accept="image/*">
+                <div class="vista-foto" id="vista-foto" hidden>
+                    <img id="vista-foto-img" alt="Vista previa de la foto del producto">
+                    <button type="button" class="btn-quitar-foto" id="btn-quitar-foto">Quitar foto</button>
+                </div>
+                <small class="nota-foto">
+                    Elige tu foto aquí y, al abrir WhatsApp, adjúntala en el chat con el clip 📎.
+                    La página no puede enviar la imagen automáticamente.
+                </small>
+            </div>
+
+            <div class="campo">
+                <label for="pers-nombre">Tu nombre *</label>
+                <input type="text" id="pers-nombre" maxlength="80" placeholder="Ej: Carlos Pérez" required>
+            </div>
+
+            <div class="campo">
+                <label for="pers-zona">Zona o dirección de entrega *</label>
+                <input type="text" id="pers-zona" maxlength="120" placeholder="Ej: Soyapango, San Salvador" required>
+            </div>
+
+            <div class="campo-ancho">
+                <button type="submit">Consultar por WhatsApp</button>
+            </div>
+
+            <p class="aviso-personalizado campo-ancho" id="aviso-personalizado" role="status" hidden></p>
+        </form>
+    </section>
+
+    <!-- RESEÑAS DE CLIENTES -->
+    <section class="personalizado resenas" id="resenas">
+        <h2>⭐ Opiniones de clientes</h2>
+
+        <div id="lista-resenas" class="lista-resenas"></div>
+        <p id="sin-resenas" class="personalizado-intro">
+            Aún no hay reseñas publicadas. ¡Sé el primero en compartir tu experiencia!
+        </p>
+
+        <h3 class="resenas-subtitulo">Deja tu reseña</h3>
+        <p class="personalizado-intro">
+            ¿Ya compraste con nosotros? Cuéntanos cómo te fue. Si lo autorizas, publicaremos
+            tu comentario (y tu foto, si la envías) en esta página.
+        </p>
+
+        <form id="form-resena" class="form-personalizado" autocomplete="off">
+            <div class="campo">
+                <label for="res-nombre">Tu nombre *</label>
+                <input type="text" id="res-nombre" maxlength="60" placeholder="Ej: Carlos P." required>
+            </div>
+
+            <div class="campo">
+                <label for="res-producto">Producto que compraste (opcional)</label>
+                <input type="text" id="res-producto" maxlength="120" placeholder="Ej: Creatina ON">
+            </div>
+
+            <div class="campo campo-corto">
+                <label for="res-estrellas">Calificación *</label>
+                <select id="res-estrellas" required>
+                    <option value="5">★★★★★ (5)</option>
+                    <option value="4">★★★★☆ (4)</option>
+                    <option value="3">★★★☆☆ (3)</option>
+                    <option value="2">★★☆☆☆ (2)</option>
+                    <option value="1">★☆☆☆☆ (1)</option>
+                </select>
+            </div>
+
+            <div class="campo campo-ancho">
+                <label for="res-comentario">Tu comentario *</label>
+                <textarea id="res-comentario" rows="3" maxlength="500" placeholder="¿Qué te pareció el producto y la atención?" required></textarea>
+            </div>
+
+            <div class="campo campo-ancho">
+                <label for="res-foto">Foto (opcional)</label>
+                <input type="file" id="res-foto" accept="image/*">
+                <div class="vista-foto" id="res-vista-foto" hidden>
+                    <img id="res-vista-foto-img" alt="Vista previa de tu foto">
+                    <button type="button" class="btn-quitar-foto" id="res-btn-quitar-foto">Quitar foto</button>
+                </div>
+                <small class="nota-foto">
+                    Elige tu foto aquí y, al abrir WhatsApp, adjúntala en el chat con el clip 📎.
+                    La página no puede enviar la imagen automáticamente.
+                </small>
+            </div>
+
+            <div class="campo-ancho">
+                <label class="check-permiso">
+                    <input type="checkbox" id="res-permiso" required>
+                    Autorizo que mi reseña (y mi foto, si la envío) se publique en este sitio.
+                </label>
+            </div>
+
+            <div class="campo-ancho">
+                <button type="submit">Enviar mi reseña por WhatsApp</button>
+            </div>
+
+            <p class="aviso-personalizado campo-ancho" id="aviso-resena" role="status" hidden></p>
+        </form>
+    </section>
 
     <!-- QUIÉNES SOMOS / PREGUNTAS FRECUENTES -->
     <section class="info">

@@ -346,6 +346,235 @@ button:hover{
     color:#ef4444;
 }
 
+/* PEDIDO PERSONALIZADO */
+
+.personalizado{
+    background:#1a1a1a;
+    border-radius:12px;
+    margin:0 20px 20px;
+    padding:24px;
+}
+
+.personalizado h2{
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.personalizado-intro{
+    color:#ccc;
+    line-height:1.5;
+    margin-bottom:20px;
+}
+
+.form-personalizado{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px 18px;
+}
+
+.form-personalizado .campo,
+.form-personalizado .campo-ancho{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    min-width:0;
+}
+
+.form-personalizado .campo-ancho{
+    grid-column:1 / -1;
+}
+
+.form-personalizado [hidden]{
+    display:none;
+}
+
+.form-personalizado .campo-corto{
+    max-width:160px;
+}
+
+.form-personalizado label{
+    font-size:14px;
+    font-weight:600;
+}
+
+.form-personalizado input[type="text"],
+.form-personalizado input[type="url"],
+.form-personalizado input[type="number"],
+.form-personalizado select,
+.form-personalizado textarea{
+    padding:12px;
+    border:1px solid #333;
+    border-radius:8px;
+    background:#111;
+    color:white;
+    font-size:15px;
+    font-family:inherit;
+    width:100%;
+}
+
+.form-personalizado textarea{
+    resize:vertical;
+}
+
+.form-personalizado input:focus,
+.form-personalizado textarea:focus{
+    outline:2px solid #00b050;
+    border-color:transparent;
+}
+
+.form-personalizado input[type="file"]{
+    color:#ccc;
+    font-size:14px;
+}
+
+.form-personalizado input[type="file"]::file-selector-button{
+    background:#00b050;
+    color:white;
+    border:none;
+    border-radius:8px;
+    padding:10px 14px;
+    margin-right:12px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.vista-foto{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-top:6px;
+}
+
+.vista-foto[hidden]{
+    display:none;
+}
+
+.vista-foto img{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:10px;
+    border:1px solid #333;
+    background:#111;
+}
+
+.btn-quitar-foto{
+    background:#ef4444;
+    padding:10px 14px;
+    font-size:14px;
+}
+
+.btn-quitar-foto:hover{
+    background:#dc2626;
+}
+
+.nota-foto{
+    color:#aaa;
+    font-size:13px;
+    line-height:1.4;
+}
+
+.aviso-personalizado{
+    background:#12301f;
+    border:1px solid #00b050;
+    border-radius:8px;
+    padding:12px 14px;
+    font-size:14px;
+    line-height:1.4;
+}
+
+/* RESEÑAS */
+
+.resenas-subtitulo{
+    font-size:18px;
+    margin:26px 0 6px;
+}
+
+.lista-resenas{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+    gap:16px;
+    margin-bottom:10px;
+}
+
+.lista-resenas:empty{
+    display:none;
+}
+
+.resena{
+    background:#111;
+    border:1px solid #2c2c2c;
+    border-radius:12px;
+    padding:14px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.resena img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.resena-estrellas{
+    color:#fbbf24;
+    font-size:18px;
+    letter-spacing:2px;
+}
+
+.resena-texto{
+    color:#ddd;
+    line-height:1.5;
+    font-size:14px;
+}
+
+.resena-autor{
+    color:#999;
+    font-size:13px;
+}
+
+.check-permiso{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:14px;
+    font-weight:normal;
+    line-height:1.4;
+    cursor:pointer;
+}
+
+.check-permiso input{
+    margin-top:3px;
+    width:18px;
+    height:18px;
+    flex-shrink:0;
+    accent-color:#00b050;
+}
+
+.sin-resultados a{
+    color:#00b4ff;
+    font-weight:bold;
+    margin-left:6px;
+}
+
+@media(max-width:700px){
+
+    .personalizado{
+        margin:0 12px 20px;
+        padding:18px;
+    }
+
+    .form-personalizado{
+        grid-template-columns:1fr;
+    }
+
+    .form-personalizado .campo-corto{
+        max-width:none;
+    }
+}
+
 /* INFORMACIÓN */
 
 .info{
