@@ -36,32 +36,56 @@ body.carrito-abierto{
 .confianza{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
+    gap:12px;
     padding:20px 20px 0;
+    align-items:start;
 }
 
 .confianza-item{
     background:#1a1a1a;
     border-radius:12px;
-    padding:18px;
-    text-align:center;
+}
+
+.confianza-item summary{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 16px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    list-style:none;
+    user-select:none;
+}
+
+.confianza-item summary::-webkit-details-marker{
+    display:none;
+}
+
+.confianza-item summary::after{
+    content:"▾";
+    margin-left:auto;
+    color:#00b050;
+    transition:transform .2s;
+}
+
+.confianza-item[open] summary::after{
+    transform:rotate(180deg);
+}
+
+.confianza-item summary:hover{
+    color:#00b050;
 }
 
 .confianza-icono{
-    font-size:28px;
-    display:block;
-    margin-bottom:8px;
-}
-
-.confianza-item h3{
-    font-size:16px;
-    margin-bottom:6px;
+    font-size:22px;
 }
 
 .confianza-item p{
     font-size:14px;
     color:#bbb;
     line-height:1.4;
+    padding:0 16px 14px;
 }
 
 /* CONTENIDO */
@@ -481,6 +505,94 @@ button:hover{
     padding:12px 14px;
     font-size:14px;
     line-height:1.4;
+}
+
+/* BANNER DE CONSULTA */
+
+.consulta-banner{
+    margin:0 20px 20px;
+}
+
+.btn-consulta{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    background:#1a1a1a;
+    border:1px solid #00b050;
+    border-radius:12px;
+    padding:16px 20px;
+    text-align:left;
+    font-size:17px;
+    font-weight:bold;
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.btn-consulta:hover{
+    background:#12301f;
+}
+
+.btn-consulta small{
+    display:block;
+    margin-top:4px;
+    font-size:14px;
+    font-weight:normal;
+    color:#bbb;
+}
+
+.btn-consulta-flecha{
+    font-size:24px;
+    color:#00b050;
+}
+
+/* ENLACE CON ASPECTO DE BOTÓN */
+
+.btn-link{
+    display:inline-block;
+    background:#00b050;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:12px 20px;
+    border-radius:10px;
+}
+
+.btn-link:hover{
+    background:#00853a;
+}
+
+/* PÁGINA DE RESEÑAS */
+
+.encabezado-pagina{
+    background:#1a1a1a;
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.encabezado-pagina .volver{
+    color:#00b4ff;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.encabezado-pagina .volver:hover{
+    color:white;
+}
+
+.pagina-simple{
+    padding:20px;
+}
+
+.pagina-simple .personalizado{
+    max-width:800px;
+    margin:0 auto 20px;
 }
 
 /* RESEÑAS */
