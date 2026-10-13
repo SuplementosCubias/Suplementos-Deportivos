@@ -12,6 +12,12 @@ const formasDePago = [
     "Efectivo contra entrega"
 ];
 
+// Subida automática de fotos (opcional).
+// Si dejas estos dos valores vacíos, el cliente debe adjuntar la foto a mano en WhatsApp.
+// Si los llenas, la foto se sube sola y el enlace va dentro del mensaje.
+const cloudinaryCloudName = "";    // Ej: "dxxxxxxxx"
+const cloudinaryUploadPreset = ""; // Ej: "proevidence_fotos"
+
 const productos = [
     {
         id: 1,
@@ -333,6 +339,87 @@ formPedido.addEventListener("submit", evento => {
    PEDIDO PERSONALIZADO
    ========================================= */
 
+/* Subida de fotos */
+
+function subidaDeFotosActiva() {
+    return Boolean(cloudinaryCloudName && cloudinaryUploadPreset);
+}
+
+// Reduce la foto para que suba rápido con datos móviles
+function comprimirImagen(archivo, ladoMaximo = 1600, calidad = 0.85) {
+    return new Promise(resolve => {
+        const url = URL.createObjectURL(archivo);
+        const img = new Image();
+
+        img.onload = () => {
+            URL.revokeObjectURL(url);
+            const escala = Math.min(1, ladoMaximo / Math.max(img.width, img.height));
+            const canvas = document.createElement("canvas");
+            canvas.width = Math.round(img.width * escala);
+            canvas.height = Math.round(img.height * escala);
+            canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
+            canvas.toBlob(blob => resolve(blob || archivo), "image/jpeg", calidad);
+        };
+
+        img.onerror = () => {
+            URL.revokeObjectURL(url);
+            resolve(archivo);
+        };
+
+        img.src = url;
+    });
+}
+
+async function subirFoto(archivo) {
+    const imagen = await comprimirImagen(archivo);
+    const datos = new FormData();
+    datos.append("file", imagen);
+    datos.append("upload_preset", cloudinaryUploadPreset);
+
+    const respuesta = await fetch(
+        `https://api.cloudinary.com/v1_1/${cloudinaryCloudName}/image/upload`,
+        { method: "POST", body: datos }
+    );
+
+    if (!respuesta.ok) {
+        throw new Error("No se pudo subir la foto");
+    }
+
+    const resultado = await respuesta.json();
+    return resultado.secure_url;
+}
+
+// Devuelve { enlace, fallo }. Si no hay foto o la subida no está activa, no hace nada.
+async function prepararFoto(archivo, boton) {
+    if (!archivo || !subidaDeFotosActiva()) {
+        return { enlace: "", fallo: false };
+    }
+
+    const textoOriginal = boton.textContent;
+    boton.disabled = true;
+    boton.textContent = "Subiendo foto...";
+
+    try {
+        return { enlace: await subirFoto(archivo), fallo: false };
+    } catch (error) {
+        return { enlace: "", fallo: true };
+    } finally {
+        boton.disabled = false;
+        boton.textContent = textoOriginal;
+    }
+}
+
+// La ventana se abre antes de subir la foto para que el navegador no la bloquee
+function abrirWhatsApp(ventana, mensaje) {
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+
+    if (ventana && !ventana.closed) {
+        ventana.location.href = url;
+    } else {
+        window.location.href = url;
+    }
+}
+
 const formPersonalizado = document.getElementById("form-personalizado");
 const inputFoto = document.getElementById("pers-foto");
 const vistaFoto = document.getElementById("vista-foto");
@@ -379,7 +466,7 @@ inputFoto.addEventListener("change", () => {
 
 document.getElementById("btn-quitar-foto").addEventListener("click", quitarFoto);
 
-formPersonalizado.addEventListener("submit", evento => {
+formPersonalizado.addEventListener("submit", async evento => {
     evento.preventDefault();
 
     const producto = document.getElementById("pers-producto").value.trim();
@@ -389,7 +476,11 @@ formPersonalizado.addEventListener("submit", evento => {
     const detalles = document.getElementById("pers-detalles").value.trim();
     const nombre = document.getElementById("pers-nombre").value.trim();
     const zona = document.getElementById("pers-zona").value.trim();
-    const tieneFoto = inputFoto.files.length > 0;
+    const archivo = inputFoto.files[0];
+    const boton = formPersonalizado.querySelector('button[type="submit"]');
+    const ventana = window.open("about:blank", "_blank");
+
+    const foto = await prepararFoto(archivo, boton);
 
     let mensaje = "Hola, quiero consultar por un producto que no está en el catálogo:\n\n";
     mensaje += `Producto: ${producto}`;
@@ -397,19 +488,28 @@ formPersonalizado.addEventListener("submit", evento => {
     mensaje += `\nCantidad: ${cantidad}`;
     if (enlace) mensaje += `\nEnlace: ${enlace}`;
     if (detalles) mensaje += `\nDetalles: ${detalles}`;
-    if (tieneFoto) mensaje += "\n\nTengo una foto del producto, te la envío en este chat.";
+    if (foto.enlace) {
+        mensaje += `\n\nFoto del producto: ${foto.enlace}`;
+    } else if (archivo) {
+        mensaje += "\n\nTengo una foto del producto, te la envío en este chat.";
+    }
     mensaje += `\n\nNombre: ${nombre}`;
     mensaje += `\nZona de entrega: ${zona}`;
 
-    window.open(
-        `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
-        "_blank"
-    );
+    abrirWhatsApp(ventana, mensaje);
 
-    avisoPersonalizado.textContent = tieneFoto
-        ? "Se abrió WhatsApp con tu consulta. Recuerda adjuntar tu foto en el chat con el clip 📎 antes de enviar."
-        : "Se abrió WhatsApp con tu consulta. Presiona enviar y te responderemos pronto.";
+    if (archivo && !foto.enlace) {
+        avisoPersonalizado.textContent = foto.fallo
+            ? "No pudimos subir la foto automáticamente. Se abrió WhatsApp con tu consulta; adjunta tu foto en el chat con el clip 📎 antes de enviar."
+            : "Se abrió WhatsApp con tu consulta. Recuerda adjuntar tu foto en el chat con el clip 📎 antes de enviar.";
+    } else {
+        avisoPersonalizado.textContent = "Se abrió WhatsApp con tu consulta. Presiona enviar y te responderemos pronto.";
+    }
     avisoPersonalizado.hidden = false;
+
+    // Limpia las cajas para una nueva consulta
+    formPersonalizado.reset();
+    quitarFoto();
 });
 
 /* =========================================
@@ -504,33 +604,48 @@ resInputFoto.addEventListener("change", () => {
 
 document.getElementById("res-btn-quitar-foto").addEventListener("click", resQuitarFoto);
 
-document.getElementById("form-resena").addEventListener("submit", evento => {
+const formResena = document.getElementById("form-resena");
+
+formResena.addEventListener("submit", async evento => {
     evento.preventDefault();
 
     const nombre = document.getElementById("res-nombre").value.trim();
     const producto = document.getElementById("res-producto").value.trim();
     const estrellas = Number(document.getElementById("res-estrellas").value);
     const comentario = document.getElementById("res-comentario").value.trim();
-    const tieneFoto = resInputFoto.files.length > 0;
+    const archivo = resInputFoto.files[0];
     const aviso = document.getElementById("aviso-resena");
+    const boton = formResena.querySelector('button[type="submit"]');
+    const ventana = window.open("about:blank", "_blank");
+
+    const foto = await prepararFoto(archivo, boton);
 
     let mensaje = "Hola, quiero dejar mi reseña:\n\n";
     mensaje += `Nombre: ${nombre}`;
     if (producto) mensaje += `\nProducto: ${producto}`;
     mensaje += `\nCalificación: ${"★".repeat(estrellas)}${"☆".repeat(5 - estrellas)} (${estrellas}/5)`;
     mensaje += `\nComentario: ${comentario}`;
-    if (tieneFoto) mensaje += "\n\nTe envío mi foto en este chat.";
+    if (foto.enlace) {
+        mensaje += `\n\nMi foto: ${foto.enlace}`;
+    } else if (archivo) {
+        mensaje += "\n\nTe envío mi foto en este chat.";
+    }
     mensaje += "\n\nAutorizo que mi reseña se publique en el sitio.";
 
-    window.open(
-        `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
-        "_blank"
-    );
+    abrirWhatsApp(ventana, mensaje);
 
-    aviso.textContent = tieneFoto
-        ? "Se abrió WhatsApp con tu reseña. Recuerda adjuntar tu foto en el chat con el clip 📎 antes de enviar. ¡Gracias!"
-        : "Se abrió WhatsApp con tu reseña. Presiona enviar. ¡Gracias por tu opinión!";
+    if (archivo && !foto.enlace) {
+        aviso.textContent = foto.fallo
+            ? "No pudimos subir la foto automáticamente. Se abrió WhatsApp con tu reseña; adjunta tu foto en el chat con el clip 📎 antes de enviar. ¡Gracias!"
+            : "Se abrió WhatsApp con tu reseña. Recuerda adjuntar tu foto en el chat con el clip 📎 antes de enviar. ¡Gracias!";
+    } else {
+        aviso.textContent = "Se abrió WhatsApp con tu reseña. Presiona enviar. ¡Gracias por tu opinión!";
+    }
     aviso.hidden = false;
+
+    // Limpia las cajas
+    formResena.reset();
+    resQuitarFoto();
 });
 
 /* =========================================
@@ -545,6 +660,13 @@ formasDePago.forEach(forma => {
 });
 
 document.getElementById("anio").textContent = new Date().getFullYear();
+
+// Si la subida automática está activa, cambia el aviso de las fotos
+if (subidaDeFotosActiva()) {
+    document.querySelectorAll(".nota-foto").forEach(nota => {
+        nota.textContent = "Tu foto se sube automáticamente y su enlace va dentro del mensaje de WhatsApp.";
+    });
+}
 
 mostrarProductos(productos);
 actualizarCarrito();
