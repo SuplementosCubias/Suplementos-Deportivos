@@ -67,6 +67,13 @@ const productos = [
         precio: 20,
         imagen: "melatonina001.png",
         descripcion: "Melatonina de 3 mg con sabor a fresa, en presentación de 90 servicios."
+    },
+    {
+        id: 14,
+        nombre: "Creatina NUTREX - 60 Servicios",
+        precio: 25,
+        imagen: "nutrex60s.jpg",
+        descripcion: "Mas fuerza y resistencia en tus entrenamientos."
     }
 ];
 
