@@ -15,65 +15,79 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum - 80 Servicios",
-        precio: 45,
+        precio: 42.50,
         imagen: "001.jpg",
         descripcion: "Creatina monohidratada para apoyar fuerza y rendimiento en el entrenamiento."
     },
     {
         id: 2,
         nombre: "Creatina ON - 120 Servicios",
-        precio: 55,
+        precio: 53.00,
         imagen: "014.jpg",
         descripcion: "Creatina de Optimum Nutrition, un envase de 120 servicios para varios meses de uso."
     },
     {
         id: 6,
         nombre: "Vitamina D3 - 120 servicios",
-        precio: 20,
+        precio: 21,
         imagen: "vitaminad3.jpg",
         descripcion: "Suplemento de vitamina D3 para complementar tu alimentación diaria."
     },
     {
         id: 8,
         nombre: "Omega 3 - 100 servicios",
-        precio: 25,
+        precio: 24,
         imagen: "omega3.jpg",
         descripcion: "Ácidos grasos omega 3 en cápsulas para complementar tu alimentación."
     },
     {
         id: 10,
         nombre: "Zinc - 100 Servicios",
-        precio: 20,
+        precio: 21,
         imagen: "zinc.jpg",
         descripcion: "Suplemento de zinc, un mineral que forma parte de una dieta balanceada."
     },
     {
         id: 11,
         nombre: "Citrato de Magnesio - 120 Servicios",
-        precio: 25,
+        precio: 23,
         imagen: "magnesionowfods.jpg",
         descripcion: "Citrato de magnesio de NOW Foods para complementar tu ingesta de magnesio."
     },
     {
         id: 12,
         nombre: "Creatina Dimatize (99.9% PUREZA) - 60 Servicios",
-        precio: 45,
+        precio: 42.50,
         imagen: "dimatize.jpg",
         descripcion: "Creatina monohidratada de alta pureza (99.9%), en presentación de 60 servicios."
     },
     {
         id: 13,
         nombre: "Melatonina 3 mg con sabor a fresa - 90 Servicios",
-        precio: 20,
+        precio: 21,
         imagen: "melatonina001.png",
         descripcion: "Melatonina de 3 mg con sabor a fresa, en presentación de 90 servicios."
     },
     {
         id: 14,
         nombre: "Creatina NUTREX - 60 Servicios",
-        precio: 25,
+        precio: 26,
         imagen: "nutrex60s.jpg",
         descripcion: "Mas fuerza y resistencia en tus entrenamientos."
+    },
+    {
+        id: 15,
+        nombre: "Nutricost D3 K2 - 60 Servicios",
+        precio: 26,
+        imagen: "k2d3.jpg",
+        descripcion: "es un suplemento dietético que combina para apoyar la salud ósea, el metabolismo del calcio y el bienestar general."
+    },
+    {
+        id: 16,
+        nombre: "Alpha test muscletech - 120 Servicios",
+        precio: 36,
+        imagen: "alphatestmuscle.jpg",
+        descripcion: "Está formulado para ayudar a apoyar la producción de testosterona y mantener una relación máxima testosterona-cortisol.Respaldado por años de investigación y desarrollo, AlphaTest®."
     }
 ];
 
