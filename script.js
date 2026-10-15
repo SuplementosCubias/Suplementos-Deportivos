@@ -71,7 +71,7 @@ const productos = [
     {
         id: 14,
         nombre: "Creatina NUTREX - 60 Servicios",
-        precio: 26,
+        precio: 26.50,
         imagen: "nutrex60s.jpg",
         descripcion: "Mas fuerza y resistencia en tus entrenamientos."
     },
