@@ -15,7 +15,7 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum - 80 Servicios",
-        precio: 42.50,
+        precio: 43,
         imagen: "001.jpg",
         descripcion: "Creatina monohidratada para apoyar fuerza y rendimiento en el entrenamiento."
     },
