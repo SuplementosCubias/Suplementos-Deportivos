@@ -77,7 +77,7 @@ const productos = [
     },
     {
         id: 15,
-        nombre: "Nutricost D3 K2 - 60 Servicios",
+        nombre: "Nutricost D3 K2 - 120 Servicios",
         precio: 26,
         imagen: "k2d3.png",
         descripcion: "es un suplemento dietético que combina para apoyar la salud ósea, el metabolismo del calcio y el bienestar general."
