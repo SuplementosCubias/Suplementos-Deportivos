@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://*.supabase.co; base-uri 'none'; form-action 'self'">
+    <meta name="referrer" content="no-referrer">
+    <title>Administración · ProEvidence</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <noscript><p class="caja-error">Este panel necesita JavaScript.</p></noscript>
+
+    <div id="pantalla-carga" class="pantalla-centro">Cargando…</div>
+
+    <main id="config-falta" class="pantalla-centro" hidden>
+        <div class="login-caja">
+            <h1>Falta conectar Supabase</h1>
+            <p>Abre el archivo <code>admin/config.js</code> y pega la URL y la llave pública de tu proyecto de Supabase.</p>
+            <p class="nota">Los pasos están en <code>admin/GUIA.md</code>.</p>
+        </div>
+    </main>
+
+    <main id="login" class="pantalla-centro" hidden>
+        <form id="form-login" class="login-caja" autocomplete="on">
+            <h1>ProEvidence · Administración</h1>
+            <label>Correo
+                <input name="correo" type="email" autocomplete="username" required>
+            </label>
+            <label>Contraseña
+                <input name="clave" type="password" autocomplete="current-password" required>
+            </label>
+            <p id="login-error" class="error-texto" role="alert"></p>
+            <button type="submit" class="btn">Entrar</button>
+        </form>
+    </main>
+
+    <main id="sin-acceso" class="pantalla-centro" hidden>
+        <div class="login-caja">
+            <h1>Sin acceso</h1>
+            <p>Tu usuario existe, pero todavía no tiene permisos en este panel. Pide al administrador que te agregue.</p>
+            <button class="btn-sec" data-accion="salir">Salir</button>
+        </div>
+    </main>
+
+    <div id="app" hidden>
+        <header class="topbar">
+            <div>
+                <strong>ProEvidence · Admin</strong>
+                <span id="usuario" class="usuario"></span>
+            </div>
+            <button class="btn-sec btn-chico" data-accion="salir">Salir</button>
+        </header>
+        <nav id="menu" class="menu" aria-label="Secciones"></nav>
+        <section id="vista" class="vista"></section>
+    </div>
+
+    <div id="modal-fondo" hidden>
+        <div class="modal" role="dialog" aria-modal="true">
+            <div id="modal-contenido"></div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/lineas.js"></script>
+    <script src="js/v-resumen.js"></script>
+    <script src="js/v-inventario.js"></script>
+    <script src="js/v-ventas.js"></script>
+    <script src="js/v-compras.js"></script>
+    <script src="js/v-devoluciones.js"></script>
+    <script src="js/v-gastos.js"></script>
+    <script src="js/v-socios.js"></script>
+    <script src="js/v-respaldo.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
