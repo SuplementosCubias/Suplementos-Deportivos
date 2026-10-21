@@ -15,79 +15,65 @@ const productos = [
     {
         id: 1,
         nombre: "Creatina Planitum - 80 Servicios",
-        precio: 43,
+        precio: 45,
         imagen: "001.jpg",
         descripcion: "Ayuda a mejorar la fuerza, la potencia y el rendimiento en entrenamientos intensos, y apoyan la recuperación muscular"
     },
     {
         id: 2,
         nombre: "Creatina ON - 120 Servicios",
-        precio: 53.00,
+        precio: 53,
         imagen: "014.jpg",
         descripcion: "Ayuda a mejorar la fuerza, la potencia y el rendimiento en entrenamientos intensos, y apoyan la recuperación muscular."
     },
     {
         id: 6,
         nombre: "Vitamina D3 - 120 servicios",
-        precio: 21,
+        precio: 20,
         imagen: "vitaminad3.jpg",
         descripcion: "Apoya huesos y dientes, la absorción del calcio y el sistema inmune."
     },
     {
         id: 8,
         nombre: "Omega 3 - 100 servicios",
-        precio: 24,
+        precio: 25,
         imagen: "omega3.jpg",
         descripcion: "Ácidos grasos omega 3 en cápsulas para apoyar la salud del corazón, el cerebro y la visión."
     },
     {
         id: 10,
         nombre: "Zinc - 100 Servicios",
-        precio: 21,
+        precio: 20,
         imagen: "zinc.jpg",
         descripcion: "Apoya el sistema inmune"
     },
     {
         id: 11,
         nombre: "Citrato de Magnesio - 120 Servicios",
-        precio: 23,
+        precio: 25,
         imagen: "magnesionowfods.jpg",
         descripcion: "Apoya músculos y nervios, y la relajación muscular"
     },
     {
         id: 12,
         nombre: "Creatina Dimatize (99.9% PUREZA) - 60 Servicios",
-        precio: 42.50,
+        precio: 45,
         imagen: "dimatize.jpg",
         descripcion: "Creatina monohidratada de alta pureza (99.9%), en presentación de 60 servicios."
     },
     {
-        id: 13,
-        nombre: "Melatonina 3 mg con sabor a fresa - 90 Servicios",
-        precio: 21,
-        imagen: "melatonina001.png",
-        descripcion: "Ayuda a conciliar el sueño y a regular el ciclo de sueño y vigilia"
-    },
-    {
         id: 14,
         nombre: "Creatina NUTREX - 60 Servicios",
-        precio: 26.50,
+        precio: 30,
         imagen: "nutrex60s.jpg",
         descripcion: "Ayuda a mejorar la fuerza, la potencia y el rendimiento en entrenamientos de alta intensidad, y apoya la recuperación muscular."
     },
     {
         id: 15,
         nombre: "Nutricost D3 K2 - 120 Servicios",
-        precio: 26,
+        precio: 25,
         imagen: "k2d3.png",
         descripcion: "Combina vitamina D3, que apoya los huesos, los dientes y el sistema inmune, con vitamina K2, que ayuda a que el calcio se aproveche en los huesos."
-    },
-    {
-        id: 16,
-        nombre: "Alpha test muscletech - 120 Servicios",
-        precio: 36,
-        imagen: "alphatestmuscle.jpg",
-        descripcion: "Suplemento deportivo que se comercializa para apoyar los niveles de testosterona, la energía y el rendimiento en el entrenamiento, junto con una buena alimentación y descanso."
     }
 ];
 
