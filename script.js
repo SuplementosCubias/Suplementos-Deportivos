@@ -34,6 +34,13 @@ const productos = [
         descripcion: "Apoya huesos y dientes, la absorción del calcio y el sistema inmune."
     },
     {
+        id: 3,
+        nombre: "Creatina ON - 60 servicios - Sabor: Fresa",
+        precio: 35,
+        imagen: "ON60S.jpg",
+        descripcion: "Ayuda a mejorar la fuerza, la potencia y el rendimiento en entrenamientos intensos, y apoyan la recuperación muscular."
+    },
+    {
         id: 8,
         nombre: "Omega 3 - 100 servicios",
         precio: 25,
