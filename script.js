@@ -37,7 +37,7 @@ const productos = [
         id: 3,
         nombre: "Creatina ON - 60 servicios - Sabor: Fresa",
         precio: 35,
-        imagen: "ON60S.jpg",
+        imagen: "ON60S.png",
         descripcion: "Ayuda a mejorar la fuerza, la potencia y el rendimiento en entrenamientos intensos, y apoyan la recuperación muscular."
     },
     {
