@@ -81,6 +81,13 @@ const productos = [
         precio: 25,
         imagen: "k2d3.png",
         descripcion: "Combina vitamina D3, que apoya los huesos, los dientes y el sistema inmune, con vitamina K2, que ayuda a que el calcio se aproveche en los huesos."
+    },
+    {
+        id: 16,
+        nombre: "Beta Alanina - Beyond Raw - 30 Servicios",
+        precio: 36,
+        imagen: "beta.jpg",
+        descripcion: "Retrasa la fatiga muscular y mejora el rendimiento en ejercicios de alta intensidad."
     }
 ];
 
