@@ -22,7 +22,7 @@ const productos = [
     {
         id: 2,
         nombre: "Creatina ON - 120 Servicios",
-        precio: 53,
+        precio: 55,
         imagen: "014.jpg",
         descripcion: "Ayuda a mejorar la fuerza, la potencia y el rendimiento en entrenamientos intensos, y apoyan la recuperación muscular."
     },
@@ -99,7 +99,7 @@ const productos = [
     {
         id: 13,
         nombre: "BPI Sports A-HD Elite/Potenciador de Testosterona Sólido para Hombres",
-        precio: 37.50,
+        precio: 40,
         imagen: "BPITESTO.png",
         descripcion: "Suplemento de doble acción formulado para optimizar los niveles de testosterona, incrementar la fuerza y potenciar el rendimiento físico."
     }
