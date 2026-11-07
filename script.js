@@ -27,74 +27,81 @@ const productos = [
         descripcion: "Ayuda a mejorar la fuerza, la potencia y el rendimiento en entrenamientos intensos, y apoyan la recuperación muscular."
     },
     {
-        id: 6,
+        id: 3,
         nombre: "Vitamina D3 - 120 servicios",
         precio: 20,
         imagen: "vitaminad3.jpg",
         descripcion: "Apoya huesos y dientes, la absorción del calcio y el sistema inmune."
     },
     {
-        id: 3,
+        id: 4,
         nombre: "Creatina ON - 60 servicios - Sabor: Fresa",
         precio: 35,
         imagen: "ON60S.png",
         descripcion: "Ayuda a mejorar la fuerza, la potencia y el rendimiento en entrenamientos intensos, y apoyan la recuperación muscular."
     },
     {
-        id: 8,
+        id: 5,
         nombre: "Omega 3 - 100 servicios",
         precio: 25,
         imagen: "omega3.jpg",
         descripcion: "Ácidos grasos omega 3 en cápsulas para apoyar la salud del corazón, el cerebro y la visión."
     },
     {
-        id: 10,
+        id: 6,
         nombre: "Zinc - 100 Servicios",
         precio: 20,
         imagen: "zinc.jpg",
         descripcion: "Apoya el sistema inmune"
     },
     {
-        id: 11,
+        id: 7,
         nombre: "Citrato de Magnesio - 120 Servicios",
         precio: 25,
         imagen: "magnesionowfods.jpg",
         descripcion: "Apoya músculos y nervios, y la relajación muscular"
     },
     {
-        id: 12,
+        id: 8,
         nombre: "Creatina Dimatize (99.9% PUREZA) - 60 Servicios",
         precio: 45,
         imagen: "dimatize.jpg",
         descripcion: "Creatina monohidratada de alta pureza (99.9%), en presentación de 60 servicios."
     },
     {
-        id: 14,
+        id: 9,
         nombre: "Creatina NUTREX - 60 Servicios",
         precio: 30,
         imagen: "nutrex60s.jpg",
         descripcion: "Ayuda a mejorar la fuerza, la potencia y el rendimiento en entrenamientos de alta intensidad, y apoya la recuperación muscular."
     },
     {
-        id: 15,
+        id: 10,
         nombre: "Nutricost D3 K2 - 120 Servicios",
         precio: 25,
         imagen: "k2d3.png",
         descripcion: "Combina vitamina D3, que apoya los huesos, los dientes y el sistema inmune, con vitamina K2, que ayuda a que el calcio se aproveche en los huesos."
     },
     {
-        id: 16,
+        id: 11,
         nombre: "Beta Alanina - Beyond Raw - 30 Servicios",
         precio: 36,
         imagen: "beta.jpg",
         descripcion: "Retrasa la fatiga muscular y mejora el rendimiento en ejercicios de alta intensidad."
     },
     {
-        id: 17,
+        id: 12,
         nombre: "Multivitamínico líquido MaryRuths, para adultos y niños, general",
         precio: 40,
         imagen: "MARYRUTHS.png",
         descripcion: "Ayuda a complementar la nutrición diaria, aportar antioxidantes y respaldar el sistema inmunitario y los niveles de energía"
+    },
+    {
+        id: 13,
+        nombre: "BPI Sports A-HD Elite/Potenciador de Testosterona Sólido para Hombres",
+        precio: 37.50,
+        imagen: "BPITESTO.png",
+        descripcion: "Suplemento de doble acción formulado para optimizar los niveles de testosterona, incrementar la fuerza y potenciar el rendimiento físico."
     }
 ];
 
