@@ -101,7 +101,7 @@ const productos = [
         nombre: "BPI Sports A-HD Elite/Potenciador de Testosterona Sólido para Hombres",
         precio: 40,
         imagen: "BPITESTO.png",
-        descripcion: "Suplemento de doble acción formulado para optimizar los niveles de testosterona, incrementar la fuerza y potenciar el rendimiento físico."
+        descripcion: "2 Productos en 1 - Suplemento de doble acción formulado para optimizar los niveles de testosterona, incrementar la fuerza y potenciar el rendimiento físico."
     }
 ];
 
