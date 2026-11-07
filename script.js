@@ -88,6 +88,13 @@ const productos = [
         precio: 36,
         imagen: "beta.jpg",
         descripcion: "Retrasa la fatiga muscular y mejora el rendimiento en ejercicios de alta intensidad."
+    },
+    {
+        id: 17,
+        nombre: "Multivitamínico líquido MaryRuths, para adultos y niños, general",
+        precio: 40,
+        imagen: "MARYRUTHS.png",
+        descripcion: "Ayuda a complementar la nutrición diaria, aportar antioxidantes y respaldar el sistema inmunitario y los niveles de energía"
     }
 ];
 
